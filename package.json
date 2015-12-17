@@ -12,7 +12,7 @@
     "gulp-iconfont": "latest",
     "gulp-imagemin": "latest",
     "gulp-jade": "latest",
-    "gulp-plumber": "latest",
+    "gulp-plumber": "^1.0.1",
     "gulp-rename": "latest",
     "gulp-replace": "latest",
     "gulp-sass": "latest",

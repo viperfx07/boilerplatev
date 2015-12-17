@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var iconfont = require('gulp-iconfont');
 var consolidate = require('gulp-consolidate');
 var rename = require('gulp-rename');
-
+var plumber = require('gulp-plumber');
 var runTimestamp = Math.round(Date.now()/1000);
 
 //icon font settings
@@ -14,6 +14,7 @@ var iconFontSettings ={
 
 gulp.task('iconfont', function(){
   return gulp.src(['src/svg/*.svg'])
+    .pipe(plumber())
     .pipe(iconfont({
       fontName: iconFontSettings.fontName, // required 
       // appendUnicode: true, // recommended option 
