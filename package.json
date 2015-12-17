@@ -1,0 +1,29 @@
+{
+  "name": "boilerplatev",
+  "version": "0.0.0",
+  "devDependencies": {
+    "browser-sync": "latest",
+    "gulp": "latest",
+    "gulp-concat": "latest",
+    "gulp-consolidate": "latest",
+    "gulp-css-globbing": "latest",
+    "gulp-directory-sync": "latest",
+    "gulp-environments": "latest",
+    "gulp-iconfont": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-jade": "latest",
+    "gulp-plumber": "latest",
+    "gulp-rename": "latest",
+    "gulp-replace": "latest",
+    "gulp-sass": "latest",
+    "gulp-sass-glob": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-uglify": "latest",
+    "gulp-util": "latest",
+    "jade": "latest",
+    "lodash": "latest",
+    "marked": "latest",
+    "require-dir": "latest",
+    "run-sequence": "latest"
+  }
+}

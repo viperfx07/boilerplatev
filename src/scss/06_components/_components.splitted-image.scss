@@ -1,0 +1,31 @@
+//- Components
+
+// The splitted image
+//
+//  -----------------------------
+//  |				    |		|
+//  |					---------
+//  |					|		|
+//  -----------------------------
+
+.splitted-image{
+	background-color: #fff;
+
+	&__item{
+		border-right:$v-splitted-image-border-size solid $v-splitted-image-border-color;
+		border-bottom:$v-splitted-image-border-size solid $v-splitted-image-border-color;
+	}
+	
+	&__ar-wrapper{
+		@extend .ar-wrapper;
+		position: relative;
+
+		&--fake-border-hide{
+			position:absolute;
+			width:100%;
+			bottom: 0;
+			height: $v-splitted-image-border-size;
+			background:$v-splitted-image-bg-color;
+		}
+	}
+}

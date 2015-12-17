@@ -1,0 +1,7 @@
+.text{
+	@each $c, $hex in $colors{
+		&-#{$c}{
+			color: $hex !important;
+		}
+	}
+}

@@ -1,0 +1,9 @@
+.header{
+	&-container{
+		padding-right: #{(160 / 1365 * 100)}% ;
+	}
+
+	@include mq($bp-max-992){
+		border-bottom: 2px solid function-color('orange');
+	}
+}

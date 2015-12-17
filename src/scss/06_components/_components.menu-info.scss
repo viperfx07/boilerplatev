@@ -1,0 +1,62 @@
+@mixin vertical-alignMid($position: absolute) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.menu-info{
+	height: 62px;
+	border-bottom: 1px solid #11a399;
+
+	&__items{
+		height: 30px;
+		margin-top: 16px;
+		margin-bottom: 16px;
+
+		&--verMid{
+			@include vertical-alignMid();
+		}
+
+		&__item1{
+			font-family: 'Arial';
+			font-weight: bold;
+			color: function-color('darkGrey');	
+			right: 10%;	
+		}
+
+		&__item2{
+			padding-left: 10%;
+			border-left: 1px solid function-color('darkGrey');
+
+			p{
+				margin: 0;
+			}
+			p:nth-child(2){
+				color: function-color('blueGreen');
+			}
+		}	
+
+		&__item3{
+			right: 1%;	
+
+			.icon-facebook{
+				color: function-color('darkBlue');
+				padding-right: 1rem;
+			}
+			.icon-twitter{
+				color: function-color('lightBlue');
+				padding-right: 1rem;
+			}
+			.icon-forward{
+				color: function-color('black');
+			}
+		}	
+
+		&__item4{
+			padding-left: 10%;
+			border-left: 1px solid function-color('darkGrey');
+		}			
+	}
+}

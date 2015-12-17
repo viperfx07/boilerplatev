@@ -1,0 +1,37 @@
+- var mainMenu = [{	title: 'Health information', href: '#' }, {	title: 'Clinics',	href: '#',	submenu: [	{	title: 'Ashfield', href: '#'	},	{	title: 'Dubbo', href: '#'	},	{	title: 'Fairfield', href: '#'	}, {	title: 'Newcastle', href: '#'	},	{	title: 'Penrith', href: '#'	},	{	title: 'Request an appointment online', href: '#'	}] },{	title: 'Education & Training',	href: '#'},{title: 'Health Professionals',	href: '#' }	]
+
+.main-menu-wrapper
+	.container.main-menu-list-container
+		.main-menu-list-wrapper
+			ul.main-menu-list
+				each item in mainMenu
+					li.main-menu-list__item
+						a.main-menu-list__link(href=item.href)= item.title
+						if(item.submenu)
+							ul.main-menu-list--child
+								each submenuItem in item.submenu
+									li.main-menu-list__item--child
+										a.main-menu-list__link--child(href=submenuItem.href)= submenuItem.title
+
+	ul.main-menu-mobile-top-tabs-list
+		each item in topTabs
+			li(class="main-menu-mobile-top-tabs-list__item main-menu-mobile-top-tabs-list__item--" + item.color)
+				a.main-menu-mobile-top-tabs-list__link(href=item.href)
+					div.main-menu-mobile-top-tabs-text
+						strong.main-menu-mobile-top-tabs__title= item.title
+						span.main-menu-mobile-top-tabs__subtitle= item.subtitle
+
+	.container
+		.top-group-wrapper
+			.top-search.top-search--mobile
+				input.top-search--mobile__input.input.input--borderless.input--grey(type="search", placeholder="Search")
+				.top-search--mobile__submit
+					input(type="submit" value="").top-search--mobile__submit__btn
+					i.top-search--mobile__submit__icon.icon.icon-search
+
+			nav.top-menu.top-menu--mobile
+				ul.top-menu--mobile__list
+					each item in topMenu
+						li.top-menu--mobile__list__item
+							a.top-menu--mobile__list__link(href=item.href)= item.title
+

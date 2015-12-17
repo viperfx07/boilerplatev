@@ -1,0 +1,112 @@
+extends ./layouts/_global.jade
+
+block header
+	include ./partials/_header.jade
+
+block mainnav
+	include ./partials/_mainnav.jade
+
+block content
+	-var fpnswTools = [{title: 'Find health information',placeholder: 'Type what you want to find'},{title: 'Book an appointment',	placeholder: 'Choose your nearest clinic', options: ['Ashfield', 'Dubbo', 'Fairfield', 'Newcastle', 'Penrith']},{title: 'Book a course',placeholder: 'Choose a courses', options: ['Courses for doctors', 'Courses for disability workers', 'Courses for service providers', 'Courses for teachers']}]
+
+	-var carouselItems = [{img: "./assets/img/carousel-1.jpg", speech_color: 'green', link:{text: 'More info for doctors', href: '#'}, speech_title: 'Do You Prescribe Zoely?', speech_content: 'We need your help Recruiting Australian women to a large, Non-interventional, International study.'},{	img: "./assets/img/carousel-1.jpg",	 speech_color: 'purple', link:{text: 'More info for doctors', href: '#'}, speech_title: 'Do You Prescribe Zoely?', speech_content: 'We need your help Recruiting Australian women to a large, Non-interventional, International study.'},{ img: "./assets/img/carousel-1.jpg",  speech_color: 'yellow', link:{text: 'More info for doctors', href: '#'}, speech_title: 'Do You Prescribe Zoely?', speech_content: 'We need your help Recruiting Australian women to a large, Non-interventional, International study.'}]
+
+	-var contentMenuItems = [{img: "//lorempixel.com/480/270/people", title:'Clinics', overlay:'lightOrange'},{img: "//lorempixel.com/480/270/people", title:'International Projects', overlay:'lightGreen'},{img: "//lorempixel.com/480/270/people", title:'Research', overlay:'lightYellow'},{img: "//lorempixel.com/480/270/people", title:'Education & Training', overlay:'lightBlueGreen'}]
+	
+	.owl-carousel.owl-theme.main-carousel
+		each item in carouselItems
+			.item.main-carousel__item
+				img(src=item.img, alt="")
+				div(class="speech-box speech-box--opaque main-carousel__speech-box speech-box--" + item.speech_color)
+					.main-carousel__speech-box__triangle
+					.speech-box__content.speech-box__content--vertical-center-quote
+						.speech-box__quote.main-carousel__speech-box__quote
+							strong.main-carousel__speech-box__title=item.speech_title
+							p.main-carousel__speech-box__description= item.speech_content
+							.main-carousel__speech-box__cta
+								a.main-carousel__speech-box__cta__link(href=item.link.href)=item.link.text
+								i.icon.icon-arrow-right-2
+
+	.container
+		.wrapper
+			.fpnsw-tools
+				.row
+					each item in fpnswTools
+						.col-sm-4.fpnsw-tools__col
+							.fpnsw-tools__wrapper
+								.fpnsw-tools__title(data-mh="mh-fpnsw-tools__title")!=item.title
+								if item.options
+									select.fpnsw-tools__select.dropkick
+										option(value="")=item.placeholder
+										each opt in item.options
+											option(value=opt)=opt
+								else
+									.fpnsw-tools__input-wrapper
+										input.fpnsw-tools__input(type="text", placeholder=item.placeholder)
+										i.fpnsw-tools__input-icon.icon.icon-search
+					
+			.row.content-row
+				each item in contentMenuItems
+					.col-xs-6.content-col
+						.box.mh-mh1
+							img.box__background-image.img-responsive(src=item.img)
+							div(class="box__overlay box__overlay--opaque box__overlay--" + item.overlay)
+							strong.box__title=item.title
+			
+			.row.content-row
+				.col-sm-6.content-col
+					.speech-box.speech-box--green
+						.speech-box__triangle
+						.speech-box__content.speech-box__content--vertical-center-quote.mh-mh1
+							.speech-box__quote.speech-box__quote--style-4
+								blockquote &ldquo;We are holding some wonderful course in Family Planning NSW come check us out!&rdquo;
+								.box__cta.box__cta--italic
+									i.icon.icon-arrow-right-2
+									a.box__cta__link(href="//bit.ly/1pEdq4J") bit.ly/1pEdq4J
+
+				.col-sm-6.content-col
+					.speech-box.speech-box--transparent-triangle.speech-box--cream
+						.speech-box__triangle
+						.speech-box__content.speech-box__content--vertical-center-quote.mh-mh1
+							.speech-box__quote.speech-box__quote--style-5
+								blockquote &ldquo;View our factsheet on contraceptions on clinical lorem ipsum dolor...&rdquo;
+								.box__cta.box__cta--right.box__cta--italic
+											a.box__cta__link.box__cta__link--medium-font(href="#") Find out more
+											i.icon.icon-arrow-right-2
+			
+			.row.content-row.row--no-gutters
+				.col-xs-12.content-col
+					.box
+						img.box__background-image.img-responsive(src="./assets/img/content-2.jpg")
+						.speech-box.speech-box--opaque.speech-box--yellow.speech-box--pos-bottom-right
+							.row.row--no-gutters
+								.col-sm-6.col-sm-offset-6
+									.speech-box__triangle
+									.speech-box__content
+										.speech-box__quote.speech-box__quote--style-1
+											p &ldquo;We are holding some wonderful courses in Family Planning NSW come check us out!
+										.box__cta.box__cta--right.box__cta--italic
+											a.box__cta__link(href="#") Find out more
+											i.icon.icon-arrow-right-2
+			
+			.row.content-row.row--no-gutters
+				.col-sm-6.content-col
+					.speech-box.speech-box--purple
+						.speech-box__triangle
+						.speech-box__content(data-mh="mh2")
+							.speech-box__quote.speech-box__quote--style-2
+								.speech-box__quote--style-2__open-quote
+								p I visited the NSW Family Planning clinic and it was so helpful, I was so unsure at first but it has been a great resource for me to turn to.
+								.speech-box__quote__by Mary Kussop
+								.speech-box__quote--style-2__close-quote
+				.col-sm-6.content-col
+					.speech-box.speech-box--transparent-triangle.speech-box--cream
+						.speech-box__triangle
+						.speech-box__content.speech-box__content--no-padding
+							img.box__background-image.img-responsive(src="./assets/img/content-3.jpg", data-mh="mh2")
+						
+						
+
+
+block footer
+	include ./partials/_footer.jade

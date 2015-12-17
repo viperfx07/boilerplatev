@@ -1,0 +1,20 @@
+$bp-desktop: 1366px;
+$bp-992: 992px;
+$bp-tablet: 768px;
+$bp-600: 600px;
+$bp-480: 480px;
+$bp-mobile: 320px;
+
+$bp-max-desktop: max-width ($bp-desktop - 1);
+$bp-max-992: max-width ($bp-992 - 1);
+$bp-max-tablet:  max-width ($bp-tablet - 1);
+$bp-max-600: max-width ($bp-600 - 1);
+$bp-max-480:  max-width ($bp-480 - 1);
+$bp-max-mobile:  max-width ($bp-mobile - 1);
+
+$bp-min-desktop: min-width $bp-desktop;
+$bp-min-992:	 min-width $bp-992;
+$bp-min-tablet:  min-width $bp-tablet;
+$bp-min-600:	 min-width $bp-600;
+$bp-min-480:	 min-width $bp-480;
+$bp-min-mobile:  min-width $bp-mobile;

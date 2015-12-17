@@ -1,0 +1,10 @@
+.input{
+	@include adjust-font-size-to(13px);
+	&--borderless{
+		border: none;
+	}
+	&--grey{
+		background: #fafafa;
+		color: #5c5c5c;
+	}
+}

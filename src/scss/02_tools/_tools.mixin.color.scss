@@ -1,0 +1,3 @@
+@mixin mixin-color($colorName){
+	color: map-get($colors, $colorName);
+}

@@ -1,0 +1,20 @@
+//compass browser settings
+$browser-minimum-versions: (
+  "ie": "8"
+);
+// $graceful-usage-threshold: 4.46163;
+
+//vertical rhythm
+$base-font-size: 16px;
+$base-line-height: 24px;
+$rhythm-unit: "rem";
+
+//bootstrap
+$row-gutter-size: 7px;
+$container-gutter-size: 15px;
+
+
+//because we need to align the wrapper/content with the logo, we need this size
+$left-space-size: 56px;
+
+

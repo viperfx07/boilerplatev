@@ -1,0 +1,20 @@
+.hamburger-btn{
+	border:none;
+	background: #fff;
+	margin: 0;
+	padding: 0;
+
+	&__bar{
+		display: block;
+		width: 37px;
+		height: 2px;
+		background: function-color('orange');
+		margin: 6px 0;
+
+		@include mq($bp-600 991px){
+			height: 3px;
+			margin: 10px 0;
+			width: 52px;
+		}
+	}
+}

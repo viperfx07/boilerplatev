@@ -1,0 +1,23 @@
+{
+  "name": "boilerplatev-scss-gulp",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "1.*",
+    "modernizr-min": "latest",
+    "loadcss": "latest",
+    "owl.carousel": "owl-carousel2#latest",
+    "matchHeight": "master",
+    "dropkick": "latest"
+  },
+  "install": {
+    "path": "src/js/vendor",
+    "sources": {
+      "jquery": "bower_components/jquery/dist/*.min.js",
+      "modernizr-min": "bower_components/modernizr-min/dist/modernizr.min.js",
+      "owl.carousel": "bower_components/owl.carousel/dist/owl.carousel.min.js",
+      "matchHeight": "bower_components/matchHeight/jquery.matchHeight-min.js",
+      "loadcss": "bower_components/loadcss/loadCSS.js",
+      "dropkick": "bower_components/dropkick/build/js/dropkick.min.js"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+doctype
+//if lt IE 7
+	<html class="no-js lt-ie9 lt-ie8 lt-ie7">
+//if IE 7
+	<html class="no-js lt-ie9 lt-ie8">
+//if IE 8
+	<html class="no-js lt-ie9">
+//[if gt IE 8]><!
+html(class='no-js', lang='en')
+	//<![endif]
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='description', content='')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+
+		title Family Planning NSW
+
+		link(rel='apple-touch-icon', href="apple-touch-icon.png")
+		link(rel='stylesheet', href='assets/css/main.css')
+		script(src='assets/js/vendor/modernizr-min/modernizr.min.js')
+	body
+		.page-wrapper.overflow-hidden
+			header.header
+				block header
+			
+			nav.main-menu
+				block mainnav
+
+			main
+				block content
+
+			footer.footer
+				block footer
+			
+								
+		script(src="assets/js/vendor/jquery/jquery.min.js")
+		script(src="assets/js/vendor/matchHeight/jquery.matchHeight-min.js")
+		script(src="assets/js/vendor/owl.carousel/owl.carousel.min.js")
+		script(src="assets/js/vendor/dropkick/dropkick.min.js")
+		//-script(src='js/plugins.js')
+		script(src='assets/js/global.js')
+		//- Google Analytics: change UA-XXXXX-X to be your site's ID.
+		//-
+			script
+			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+			e.src='//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+			ga('create','UA-XXXXX-X');ga('send','pageview');

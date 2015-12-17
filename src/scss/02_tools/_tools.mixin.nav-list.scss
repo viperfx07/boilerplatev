@@ -1,0 +1,9 @@
+/*
+This is the mixin to style the <ul> or other list tag
+as a float left nav
+ */
+@mixin nav-list{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}

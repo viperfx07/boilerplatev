@@ -1,0 +1,3 @@
+@function function-icon($icon-name){
+	@return map-get($icon-list, $icon-name);
+}
