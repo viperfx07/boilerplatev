@@ -1,4 +1,4 @@
-- var mainMenu = [{	title: 'Health information', href: '#' }, {	title: 'Clinics',	href: '#',	submenu: [	{	title: 'Ashfield', href: '#'	},	{	title: 'Dubbo', href: '#'	},	{	title: 'Fairfield', href: '#'	}, {	title: 'Newcastle', href: '#'	},	{	title: 'Penrith', href: '#'	},	{	title: 'Request an appointment online', href: '#'	}] },{	title: 'Education & Training',	href: '#'},{title: 'Health Professionals',	href: '#' }	]
+- var mainMenu = [{	title: 'Home', href: '#' }, {	title: 'Clients',	href: '#',	submenu: [	{	title: 'Ashfield', href: '#'	},	{	title: 'Dubbo', href: '#'	},	{	title: 'Fairfield', href: '#'	}, {	title: 'Newcastle', href: '#'	},	{	title: 'Penrith', href: '#'	},	{	title: 'Portfolio', href: '#'	}] },{	title: 'About Us',	href: '#'},{title: 'Contact',	href: '#' }	]
 
 .main-menu-wrapper
 	.container.main-menu-list-container
@@ -12,14 +12,6 @@
 								each submenuItem in item.submenu
 									li.main-menu-list__item--child
 										a.main-menu-list__link--child(href=submenuItem.href)= submenuItem.title
-
-	ul.main-menu-mobile-top-tabs-list
-		each item in topTabs
-			li(class="main-menu-mobile-top-tabs-list__item main-menu-mobile-top-tabs-list__item--" + item.color)
-				a.main-menu-mobile-top-tabs-list__link(href=item.href)
-					div.main-menu-mobile-top-tabs-text
-						strong.main-menu-mobile-top-tabs__title= item.title
-						span.main-menu-mobile-top-tabs__subtitle= item.subtitle
 
 	.container
 		.top-group-wrapper

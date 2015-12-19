@@ -1,6 +1,5 @@
 
-- var topMenu = [{ title: 'About us', 'href': "#"}, { title: 'Who we help', 'href': "#"}, { title: 'Media and events', 'href': "#"}, { title: 'Get involved', 'href': "#"}, { title: 'Bookshop', 'href': "#"}]
-- var topTabs = [{title: 'Donate', subtitle: 'and support us', href : '#', color: 'purple'}, {title: 'Talkline', subtitle: '1300 658 886', href : '#', color: 'yellow'}]
+- var topMenu = [{ title: 'Menu', 'href': "#"}, { title: 'Menu', 'href': "#"}, { title: 'Menu', 'href': "#"}, { title: 'Menu', 'href': "#"}, { title: 'Menu', 'href': "#"}]
 
 .container
 	.top-menu-wrapper
@@ -17,16 +16,8 @@
 				i.top-search-submit__icon.icon.icon-search
 
 	.top-logo
-		img.top-logo__img(src="/assets/img/fpnsw-logo.png", alt="FPNSW logo")
+		img.top-logo__img(src="//placehold.it/190x117?text=logo", alt="logo")
 	
-
-	.top-tabs
-		ul.top-tabs-list
-			each item in topTabs
-				li(class="top-tabs-list__item top-tabs-list__item--" + item.color)
-					a.top-tabs-list__link(href=item.href)
-						strong.top-tabs__title= item.title
-						span.top-tabs__subtitle= item.subtitle
 	.top-hamburger
 		button.hamburger-btn
 			span.sr-only Toggle navigation
