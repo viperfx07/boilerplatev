@@ -49,17 +49,6 @@
 			}
 			return false;
 		});
-
-		//the fpnsw tools
-		$('.fpnsw-tools__col').on('click', function(){
-			var $self = $(this);
-			$('.fpnsw-tools__col').removeClass('fpnsw-tools__col--active');
-			$self.addClass('fpnsw-tools__col--active');
-		});
 	});
-
-	$(window).load(function(){
-		$('.mh-mh1').matchHeight({byRow: false});
-	})
 
 })(jQuery);

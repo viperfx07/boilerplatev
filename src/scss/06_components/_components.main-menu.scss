@@ -1,7 +1,5 @@
 .main-menu{
 	background: f-color('blueGreen');
-	height: 62px;
-	overflow: hidden;
 
 	@include mq($bp-max-992){
 		height: auto;
@@ -240,6 +238,13 @@
 			}
 		}
 		
+		//-main-menu-list-2-container
+		&-2-container{
+			@include mq($bp-min-desktop){
+				display: none;
+			}
+		}
+		
 		//-main-menu-list--child
 		&--child{
 			@include m-nav-list;
@@ -251,6 +256,7 @@
 			margin-top: 18px;
 			margin-left: -1px;
 			z-index: 10;
+			min-width: 150px;
 
 			@include mq($bp-max-992){
 				background: #fff;
