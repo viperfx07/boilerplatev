@@ -11,13 +11,23 @@ html(class='no-js', lang='en')
 	head
 		meta(charset='utf-8')
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
-		meta(name='description', content='')
-		meta(name='viewport', content='width=device-width, initial-scale=1')
+		
+		meta(content="#",name="description")
+		meta(content="#",name="author")
+		
+		//-# Mobile Viewport Scaling
+		meta(content="True",name="HandheldFriendly")
+		meta(content="320",name="MobileOptimized")
+		meta(content="width=device-width,initial-scale=1",name="viewport")
+		meta(content="no",name="user-scalable")
+		meta(content="on",http-equiv="cleartype")
+		//-#
 
 		title Boilerplate V
 
 		link(rel='apple-touch-icon', href="apple-touch-icon.png")
 		link(rel='stylesheet', href='assets/css/main.css')
+		
 		script(src='assets/js/vendor/modernizr-min/modernizr.min.js')
 	body
 		header.header
