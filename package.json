@@ -24,6 +24,7 @@
     "lodash": "latest",
     "marked": "latest",
     "require-dir": "latest",
-    "run-sequence": "latest"
+    "run-sequence": "latest",
+    "webpack": "latest"
   }
 }
