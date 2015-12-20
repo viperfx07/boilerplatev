@@ -1,3 +1,11 @@
+// Although the template is similar to FontAwesome,
+// don't use it like .fa.fa-[icon-name].
+// instead just use like v-icon-[icon-name]
+// e.g. .v-icon-facebook (don't need .v-icon.v-icon-facebook)
+
+// DON'T USE "icon" as a class. Adblock Plus apparently  
+// has a CSS rule to hide icon-[social-icons] elements.
+
 @font-face {
   font-family: "icons";
   src: url('../fonts/icons.eot');
@@ -9,8 +17,8 @@
   font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"], .icon {
-    /* use !important to prevent issues with browser extensions that change fonts */
+[class^="v-icon-"], [class*=" v-icon-"], .v-icon {
+  //use !important to prevent issues with browser extensions that change fonts
   font-family: 'icons' !important;
   speak: none;
   font-style: normal;
@@ -20,69 +28,69 @@
   line-height: 1;
   @include inline-block;
 
-  /* Better Font Rendering =========== */
+  // Better Font Rendering
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-lg {
+.v-icon-lg {
   font-size: 1.33333333em;
   line-height: 0.75em;
   vertical-align: -15%;
 }
-.icon-2x {
+.v-icon-2x {
   font-size: 2em;
 }
-.icon-3x {
+.v-icon-3x {
   font-size: 3em;
 }
-.icon-4x {
+.v-icon-4x {
   font-size: 4em;
 }
-.icon-5x {
+.v-icon-5x {
   font-size: 5em;
 }
-.icon-fw {
+.v-icon-fw {
   width: 1.28571429em;
   text-align: center;
 }
-.icon-ul {
+.v-icon-ul {
   padding-left: 0;
   margin-left: 2.14285714em;
   list-style-type: none;
 }
-.icon-ul > li {
+.v-icon-ul > li {
   position: relative;
 }
-.icon-li {
+.v-icon-li {
   position: absolute;
   left: -2.14285714em;
   width: 2.14285714em;
   top: 0.14285714em;
   text-align: center;
 }
-.icon-li.icon-lg {
+.v-icon-li.v-icon-lg {
   left: -1.85714286em;
 }
-.icon-border {
+.v-icon-border {
   padding: .2em .25em .15em;
   border: solid 0.08em #eeeeee;
   border-radius: .1em;
 }
-.icon-pull-left {
+.v-icon-pull-left {
   float: left;
 }
-.icon-pull-right {
+.v-icon-pull-right {
   float: right;
 }
-.icon.icon-pull-left {
+.v-icon.v-icon-pull-left {
   margin-right: .3em;
 }
-.icon.icon-pull-right {
+.v-icon.v-icon-pull-right {
   margin-left: .3em;
 }
 
-.icon-stack {
+.v-icon-stack {
   position: relative;
   display: inline-block;
   width: 2em;
@@ -90,43 +98,57 @@
   line-height: 2em;
   vertical-align: middle;
 }
-.icon-stack-1x,
-.icon-stack-2x {
+.v-icon-stack-1x,
+.v-icon-stack-2x {
   position: absolute;
   left: 0;
   width: 100%;
   text-align: center;
 }
-.icon-stack-1x {
+.v-icon-stack-1x {
   line-height: inherit;
 }
-.icon-stack-2x {
+.v-icon-stack-2x {
   font-size: 2em;
 }
-.icon-inverse {
+.v-icon-inverse {
   color: #ffffff;
 }
 
 $icon-list: (
 
-  facebook: "\EA01",
+  chevron-down: "\EA01",
 
-  instagram: "\EA02",
+  chevron-left: "\EA02",
 
-  linkedin: "\EA03",
+  chevron-right: "\EA03",
 
-  search: "\EA04",
+  chevron-up: "\EA04",
 
-  tumblr: "\EA05",
+  facebook: "\EA05",
 
-  twitter: "\EA06",
+  instagram: "\EA06",
 
-  youtube: "\EA07",
+  linkedin: "\EA07",
+
+  search: "\EA08",
+
+  tumblr: "\EA09",
+
+  twitter: "\EA0A",
+
+  youtube: "\EA0B",
 
 );
 
 @each $icon, $refKey in $icon-list{
-  .icon-#{$icon}:before{
+  .v-icon-#{$icon}:before{
     content: $refKey;
   }
+}
+
+//usually this use on pseudo element
+@mixin m-use-icon($iconName){
+  @extend .v-icon;
+  content: f-icon($iconName);
 }

@@ -15,25 +15,11 @@ block content
 		each item in carouselItems
 			.item.main-carousel__item
 				img(src=item.img, alt="")
-				div(class="speech-box speech-box--opaque main-carousel__speech-box speech-box--" + item.speech_color)
-					.main-carousel__speech-box__triangle
-					.speech-box__content.speech-box__content--vertical-center-quote
-						.speech-box__quote.main-carousel__speech-box__quote
-							strong.main-carousel__speech-box__title=item.speech_title
-							p.main-carousel__speech-box__description= item.speech_content
-							.main-carousel__speech-box__cta
-								a.main-carousel__speech-box__cta__link(href=item.link.href)=item.link.text
-								i.icon.icon-arrow-right-2
 
 	.container
-		.wrapper
-			.row.content-row
-				each item in contentMenuItems
-					.col-xs-6.content-col
-						.box.mh-mh1
-							img.box__background-image.img-responsive(src=item.img)
-							div(class="box__overlay box__overlay--opaque box__overlay--" + item.overlay)
-							strong.box__title=item.title
+		.row
+			.col-xs-12
+				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore amet repudiandae maiores iste, quae unde, praesentium cum nobis et minima aliquid illum accusantium laudantium repellendus asperiores. Ducimus odio, magni cum!
 			
 block footer
 	include ./partials/_footer.jade

@@ -19,7 +19,8 @@
 			nav: true,
 			items: 1,
 			navText: '',
-			autoplay: true
+			autoplay: true,
+			loop: true
 		});
 
 		//all dropkick

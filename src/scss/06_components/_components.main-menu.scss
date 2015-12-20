@@ -1,12 +1,12 @@
 .main-menu{
-	background: function-color('blueGreen');
+	background: f-color('blueGreen');
 	height: 62px;
 	overflow: hidden;
 
 	@include mq($bp-max-992){
 		height: auto;
 		overflow: visible; //for the box shadow
-		color: function-color('darkGrey');
+		color: f-color('darkGrey');
 		position: absolute;
 		right: 0;
 		width: 50%;
@@ -54,14 +54,14 @@
 	
 	//.main-menu-list
 	&-list{
-		@include nav-list;
+		@include m-nav-list;
 		height: 100%;
 
 		
 		
 		//-main-menu-list__item
 		&__item{
-			@include nav-list-item;
+			@include m-nav-list-item;
 			height: 100%;
 			padding: 20px 0;
 
@@ -80,7 +80,7 @@
 				
 
 				.main-menu-list__link{
-					color: function-color('darkGrey');	
+					color: f-color('darkGrey');	
 				}
 
 				.main-menu-list--child{
@@ -101,7 +101,7 @@
 				padding: 6px;
 
 				&:hover, &:focus{
-					background-color: function-color('blueGreen');
+					background-color: f-color('blueGreen');
 
 					.main-menu-list__link--child{
 						color: #fff;
@@ -117,7 +117,7 @@
 						background: #fff;	
 
 						.main-menu-list__link--child{
-							color: function-color('lightBlueGreen2');
+							color: f-color('lightBlueGreen2');
 						}
 					}
 				}
@@ -129,12 +129,12 @@
 				width: 100%;
 				height: auto;
 				display: block;
-				border-bottom: 1px solid function-color('lightGrey');
+				border-bottom: 1px solid f-color('lightGrey');
 				position: relative;
 
 				&:before{
 					@extend .icon;
-					content: function-icon('big-arrow-right');
+					content: f-icon('big-arrow-right');
 					@include transform(none);
 					@include transition(transform 0.2s ease-out);
 					@include adjust-font-size-to(24px, 1.5);
@@ -174,7 +174,7 @@
 				color: #fff;
 
 				@include mq($bp-max-992){
-					color: function-color('darkGrey');
+					color: f-color('darkGrey');
 				}
 			}
 
@@ -242,10 +242,10 @@
 		
 		//-main-menu-list--child
 		&--child{
-			@include nav-list;
+			@include m-nav-list;
 			position: absolute;
 			display: none;
-			border: 1px solid function-color('blueGreen');
+			border: 1px solid f-color('blueGreen');
 			border-top: none;
 			background: #f4f5e7;
 			margin-top: 18px;
@@ -291,12 +291,12 @@
 
 				//.main-menu-mobile-top-tabs-list__item--purple
                 &--purple {
-                    background: function-color('purple');
+                    background: f-color('purple');
                 }
 
                 //.main-menu-mobile-top-tabs-list__item--yellow
                 &--yellow {
-                    background: function-color('yellow');
+                    background: f-color('yellow');
                 }
 				
 				@include mq($bp-max-992){
@@ -332,7 +332,7 @@
                 	content: none;
 
                 	@include mq($bp-max-992){
-                		@include mixin-use-icon('arrow-right-2');
+                		@include m-use-icon('arrow-right-2');
 						@include adjust-font-size-to(24px);
 						right: 32px;
                 	}

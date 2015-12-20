@@ -34,15 +34,15 @@
 
     //.top-menu
     &-menu {
-        @extend %clearfix;
+        @extend %p-clearfix;
         padding: 0 10px 0px;
-        border-bottom: 1px solid function-color(lightGrey);
+        border-bottom: 1px solid f-color(lightGrey);
         margin-top: 6px;
 
         //.top-menu-list
         &-list {
             display: block;
-            @include nav-list;
+            @include m-nav-list;
 
             //.top-menu-list__item
             &__item {
@@ -59,7 +59,7 @@
                 &,
                 &:hover,
                 &:focus {
-                    @include mixin-color(lightGrey);
+                    @include m-color(lightGrey);
                 }
                 &:hover {
                     text-decoration: none;
@@ -90,7 +90,7 @@
             //.top-menu--mobile__list
             &__list {
                 display: block;
-                @include nav-list;
+                @include m-nav-list;
 
                 //.top-menu--mobile__list__item
                 &__item {
@@ -107,7 +107,7 @@
                     &,
                     &:hover,
                     &:focus {
-                        @include mixin-color(lightBlueGreen2);
+                        @include m-color(lightBlueGreen2);
                     }
                     &:hover {
                         text-decoration: none;
@@ -170,7 +170,7 @@
 
             //.top-search-submit__icon
             &__icon {
-                @extend %absolutefullsize;
+                @extend %p-absolutefullsize;
                 text-align: center;
                 line-height: 34px;
                 color: #fff;
@@ -185,7 +185,7 @@
             margin-top: 0;
             padding: 0;
             width: 100%;
-            border-bottom: 1px solid function-color('lightGrey');
+            border-bottom: 1px solid f-color('lightGrey');
             
             //.top-search--mobile__input
             &__input{
@@ -240,7 +240,7 @@
 
                 //.top-search--mobile__submit__icon
                 &__icon {
-                    @extend %absolutefullsize;
+                    @extend %p-absolutefullsize;
                     text-align: center;
                     line-height: 34px;
                     color: #fff;
@@ -249,7 +249,7 @@
                     @include mq($bp-max-992){
                         @include adjust-font-size-to(20px);
                         line-height: 34px;
-                        color: function-color('lightGrey');
+                        color: f-color('lightGrey');
                     }
                 }
             }

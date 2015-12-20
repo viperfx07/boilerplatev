@@ -8,7 +8,7 @@
 		display: block;
 		width: 37px;
 		height: 2px;
-		background: function-color('orange');
+		background: f-color('orange');
 		margin: 6px 0;
 
 		@include mq($bp-600 991px){

@@ -9,10 +9,10 @@ var runTimestamp = Math.round(Date.now()/1000);
 var iconFontSettings ={
   fontName: 'icons', // the font-family named used in the css
   fontPath: '../fonts/', //relative path to the fonts file
-  className: 'icon' //associated with 'className' variable in template. will be the class name used in the css
+  className: 'v-icon' //associated with 'className' variable in template. will be the class name used in the css
 }
 
-gulp.task('iconfont', function(){
+gulp.task('generate-iconfont', function(){
   return gulp.src(['src/svg/*.svg'])
     .pipe(plumber())
     .pipe(iconfont({
@@ -36,5 +36,7 @@ gulp.task('iconfont', function(){
         .pipe(rename('_generic.icons.scss'))
         .pipe(gulp.dest('src/scss/03_generic/'))
     })
-    .pipe(gulp.dest('www/assets/fonts/'));
+    .pipe(gulp.dest('src/fonts/'));
 });
+
+gulp.task('iconfont', ['generate-iconfont', 'dirsync']);

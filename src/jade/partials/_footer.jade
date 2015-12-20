@@ -19,10 +19,10 @@ block footer
 						each item in footerSocialIcons
 							li.footer-social-icons-list-item.col-xs-2
 								a.footer-social-icons-link(href=item.href)
-									img.footer-social-icons-img(src=item.img, alt=item.icon)
+									img.footer-social-icons-img(src=item.img, alt=item.icon + ' link')
 									div(class="footer-social-icons-overlay footer-social-icons-overlay--" + item.color)
 									.footer-social-icons-icon
-										i.icon(class='icon-' + item.icon)
+										i(class='v-icon-' + item.icon)
 									.footer-speech-bubble-mask
 				.footer-top-right.col-md-3
 					.footer-top-right-title Partner logos:

@@ -4,6 +4,6 @@
 	}
 
 	@include mq($bp-max-992){
-		border-bottom: 2px solid function-color('orange');
+		border-bottom: 2px solid f-color('orange');
 	}
 }

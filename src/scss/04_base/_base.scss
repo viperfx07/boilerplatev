@@ -28,10 +28,10 @@ body{
 }
 
 header{
-	@extend %clearfix;
+	@extend %p-clearfix;
 }
 
 footer{
-	@extend %clearfix;
+	@extend %p-clearfix;
 	background: #2e2e2e;
 }
