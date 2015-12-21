@@ -8,4 +8,5 @@ gulp.task('watch', function () {
 	gulp.watch('src/js/**/*.js', ['webpack']);
 	gulp.watch('src/svg/**/*.svg', ['iconfont']);
 	gulp.watch('src/scss/_generic_icons_template.scss', ['iconfont', 'sass']);
+	gulp.watch('src/root/**/*.*', ['rootfiles']);
 });

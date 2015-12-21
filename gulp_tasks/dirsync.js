@@ -6,7 +6,6 @@ var gulp    = require( 'gulp' ),
 gulp.task( 'dirsync', function() {
     return gulp.src( '' )
     	.pipe(plumber())
-        .pipe(dirSync( 'src/js/vendor', 'www/assets/js/vendor', { printSummary: true } ))
         .pipe(dirSync( 'src/fonts', 'www/assets/fonts', { printSummary: true } ))
         .on('error', gutil.log);
 } );
