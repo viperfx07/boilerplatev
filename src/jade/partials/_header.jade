@@ -1,28 +1,2 @@
 
-- var topMenu = [{ title: 'Menu', 'href': "#"}, { title: 'Menu', 'href': "#"}, { title: 'Menu', 'href': "#"}, { title: 'Menu', 'href': "#"}, { title: 'Menu', 'href': "#"}]
-
-.container
-	.top-menu-wrapper
-		nav.top-menu
-			ul.top-menu-list
-				each item in topMenu
-					li.top-menu-list__item
-						a.top-menu-list__link(href=item.href)= item.title
-
-		.top-search
-			input.top-search__input.input.input--borderless.input--grey(type="search", placeholder="Search")
-			.top-search-submit
-				input(type="submit" value="").top-search-submit__btn
-				i.top-search-submit__icon.v-icon-search
-
-	.top-logo
-		img.top-logo__img(src="//placehold.it/190x117?text=logo", alt="logo")
-	
-	.top-hamburger
-		button.hamburger-btn
-			span.sr-only Toggle navigation
-			span.hamburger-btn__bar
-			span.hamburger-btn__bar
-			span.hamburger-btn__bar
-
 

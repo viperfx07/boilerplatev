@@ -3,27 +3,9 @@ extends ./layouts/_global.jade
 block header
 	include ./partials/_header.jade
 
-block mainnav
-	include ./partials/_mainnav.jade
-
 block content
-	-var carouselItems = [{img: "./assets/img/carousel-1.jpg", speech_color: 'green', link:{text: 'More info for doctors', href: '#'}, speech_title: 'Lorem ipsum duplet saram?', speech_content: 'Lorem pisum duplete saram lorem ipsum.'},{	img: "./assets/img/carousel-1.jpg",	 speech_color: 'purple', link:{text: 'More info for doctors', href: '#'}, speech_title: 'Lorem ipsum duplet saram?', speech_content: 'Lorem pisum duplete saram lorem ipsum.'},{ img: "./assets/img/carousel-1.jpg",  speech_color: 'yellow', link:{text: 'More info for doctors', href: '#'}, speech_title: 'Lorem ipsum duplet saram?', speech_content: 'Lorem pisum duplete saram lorem ipsum.'}]
-
-	-var contentMenuItems = [{img: "//lorempixel.com/480/270/people", title:'Clinics', overlay:'lightOrange'},{img: "//lorempixel.com/480/270/people", title:'International Projects', overlay:'lightGreen'},{img: "//lorempixel.com/480/270/people", title:'Research', overlay:'lightYellow'},{img: "//lorempixel.com/480/270/people", title:'Education & Training', overlay:'lightBlueGreen'}]
-	
-	.owl-carousel.owl-theme.main-carousel
-		each item in carouselItems
-			.item.main-carousel__item
-				img(src=item.img, alt="")
-
 	.container
-		.row
-			.col-xs-12
-				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore amet repudiandae maiores iste, quae unde, praesentium cum nobis et minima aliquid illum accusantium laudantium repellendus asperiores. Ducimus odio, magni cum!
-				select.dropkick
-					option 1
-					option 2
-					option 3
-			
+		p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, autem ut magnam assumenda beatae praesentium, iusto explicabo nesciunt ad inventore ratione repellat! Vero odit et ad ea placeat, quam saepe!			
+
 block footer
 	include ./partials/_footer.jade

@@ -62,7 +62,7 @@
         @include mq($bp-max-tablet) {
             margin-bottom: 12px;
         }
-         @include mq($bp-max-600) {
+        @include mq($bp-max-600) {
         	bottom: 0px;
         	margin-bottom: 0;
         }

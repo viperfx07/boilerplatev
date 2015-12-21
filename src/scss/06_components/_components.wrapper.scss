@@ -1,5 +1,0 @@
-.wrapper{
-	@include mq($bp-min-desktop){
-		margin-left: em($left-space-size);
-	}
-}

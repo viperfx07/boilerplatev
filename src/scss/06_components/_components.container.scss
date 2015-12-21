@@ -1,0 +1,5 @@
+.container{
+	@include mq($bp-min-desktop){
+		width: $bp-desktop - (2 * $container-gutter-size);
+	}
+}
