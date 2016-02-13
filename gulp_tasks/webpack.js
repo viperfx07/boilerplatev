@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
-	plumber = require('gulp-plumber')
-	webpackStream = require('webpack-stream')
+	plumber = require('gulp-plumber'),
+	webpackStream = require('webpack-stream');
 
 gulp.task('webpack-dev', function() {
   return gulp.src('src/js/main.js')

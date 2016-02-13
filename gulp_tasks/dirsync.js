@@ -1,6 +1,6 @@
 var gulp    = require( 'gulp' ),
 	dirSync = require( 'gulp-directory-sync' ),
-	plumber = require( 'gulp-plumber' )
+	plumber = require( 'gulp-plumber' ),
 	gutil	= require( 'gulp-util' );
  
 gulp.task( 'dirsync', function() {
