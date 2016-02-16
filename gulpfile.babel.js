@@ -6,7 +6,6 @@ import browserSyncLib from 'browser-sync';
 import pjson from './package.json';
 import minimist from 'minimist';
 import wrench from 'wrench';
-import requireDir from 'require-dir';
 
 // Load all gulp plugins based on their names
 // EX: gulp-copy -> copy
@@ -17,8 +16,46 @@ let args = minimist(process.argv.slice(2));
 let dirs = config.directories;
 let taskTarget = args.production ? dirs.destination : dirs.temporary;
 
-// Gulp
-let	tasks = requireDir('./gulp_tasks');
+// Create a new browserSync instance
+let browserSync = browserSyncLib.create();
 
-gulp.task('complete',['bower', 'imagemin', 'iconfont', 'fonts', 'sass', 'jade', 'webpack', 'dirsync', 'rootfiles', 'browserSync', 'watch' ]);
-gulp.task('default', ['browserSync', 'watch']);
+// This will grab all js in the `gulp` directory
+// in order to load all gulp tasks
+wrench.readdirSyncRecursive('./gulp').filter((file) => {
+  return (/\.(js)$/i).test(file);
+}).map(function(file) {
+	console.log(file);
+	require('./gulp/' + file)(gulp, plugins, args, config, taskTarget, browserSync);
+});
+
+// gulp.task('complete',['bower', 'imagemin', 'iconfont', 'fonts', 'sass', 'jade', 'webpack', 'dirsync', 'rootfiles', 'browserSync', 'watch' ]);
+
+// Default task
+gulp.task('default', ['clean'], () => {
+  gulp.start('build');
+});
+
+// Build production-ready code
+gulp.task('build', [
+  'copy',
+  'imagemin',
+  'iconfont',
+  'fonts',
+  'jade',
+  'sass',
+  'webpack'
+]);
+
+// // Server tasks with watch
+// gulp.task('serve', [
+//   'imagemin',
+//   'copy',
+//   'jade',
+//   'sass',
+//   'webpack',
+//   'browserSync',
+//   'watch'
+// ]);
+
+// // Testing
+// gulp.task('test', ['eslint']);
