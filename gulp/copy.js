@@ -2,8 +2,7 @@
 
 import path from 'path';
 
-export default function(gulp, plugins, args, config, taskTarget, browserSync) {
-  let dirs = config.directories;
+export default function(gulp, plugins, args, config, taskTarget, browserSync, dirs) {
   let dest = path.join(taskTarget);
 
   // Copy

@@ -35,7 +35,6 @@ html(class='no-js', lang='en')
 		link(rel='apple-touch-icon', href="assets/apple-touch-icon.png")
 		link(rel='stylesheet', href='assets/css/main.css')
 		
-		script(src='assets/js/vendor/modernizr-min/modernizr.min.js')
 	body
 		header.header
 			block header
@@ -47,7 +46,9 @@ html(class='no-js', lang='en')
 			block footer
 		
 		script(src="//cdn.polyfill.io/v2/polyfill.min.js")
-		script(src='assets/js/global.min.js')
+
+		//- how to make it read the arguments
+		script(src='assets/js/global.js')
 		//- Google Analytics: change UA-XXXXX-X to be your site's ID.
 		//-
 			script

@@ -1,23 +1,8 @@
-var gulp = require('gulp');
-
-gulp.task('watch', function () {
-	gulp.watch('src/fonts/**/*', ['dirsync']);
-	gulp.watch('src/img/**/*', ['imagemin']);
-	gulp.watch('src/jade/**/*.jade', ['jade'])
-	gulp.watch('src/scss/**/*.scss', ['sass']);
-	gulp.watch('src/js/**/*.js', ['webpack']);
-	gulp.watch('src/svg/**/*.svg', ['iconfont']);
-	gulp.watch('src/scss/_generic_icons_template.scss', ['iconfont', 'sass']);
-	gulp.watch('src/root/**/*.*', ['rootfiles']);
-});
-
 'use strict';
 
 import path from 'path';
 
-export default function(gulp, plugins, args, config, taskTarget, browserSync) {
-  let dirs = config.directories;
-
+export default function(gulp, plugins, args, config, taskTarget, browserSync, dirs) {
   // Watch task
   gulp.task('watch', () => {
     if (!args.production) {
@@ -26,6 +11,16 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync) {
         path.join(dirs.source, dirs.styles, '**/*.{scss,sass}'),
         path.join(dirs.source, dirs.modules, '**/*.{scss,sass}')
       ], ['sass']);
+
+      // Scripts
+      gulp.watch([
+        path.join(dirs.source, dirs.scripts, '**/*.js')], ['webpack']);
+
+      // Icon font
+      gulp.watch([
+        path.join(dirs.source, dirs.icons, '**/*.svg'),
+        path.join(dirs.source, dirs.styles, '_generic_icons_template.scss')
+      ], ['iconfont', 'fonts', 'sass']);
 
       // Jade Templates
       gulp.watch([
@@ -53,7 +48,7 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync) {
       // All other files
       gulp.watch([
         path.join(dirs.temporary, '**/*'),
-        '!' + path.join(dirs.temporary, '**/*.{css,map,html,js}')
+        '!' + path.join(dirs.temporary, '**/*.{css,map,html,js,svg,ttf,eot,woff,woff2}')
       ]).on('change', browserSync.reload);
     }
   });

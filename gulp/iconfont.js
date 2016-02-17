@@ -3,21 +3,21 @@
 import path from 'path';
 import lodash from 'lodash';
 
-export default function(gulp, plugins, args, config, taskTarget, browserSync){
-  let dirs = config.directories;
-  let dest = path.join(taskTarget, dirs.fonts.replace(/^_/, ''));
+export default function(gulp, plugins, args, config, taskTarget, browserSync, dirs){
   let runTimestamp = Math.round(Date.now()/1000);
+  let dest = path.join(dirs.source, dirs.fonts);
 
   //icon font settings
   let iconFontSettings ={
     fontName: 'icons', // the font-family named used in the css
-    fontPath: '../fonts/', //relative path to the fonts file
+    fontPath: '../fonts/', //relative path to the fonts file, assuming the css directory is the same level as the fonts directory
     className: 'v-icon' //associated with 'className' variable in template. will be the class name used in the css
   };
 
-  gulp.task('iconfont', function(){
-    return gulp.src(path.join(dirs.source, dirs.icons, '**/*.{svg}'))
+  gulp.task('iconfont', () => {
+    return gulp.src(path.join(dirs.source, dirs.icons, '**/*.svg'))
       .pipe(plugins.plumber())
+      .pipe(plugins.changed(dest))
       .pipe(plugins.iconfont({
         fontName: iconFontSettings.fontName, // required 
         // appendUnicode: true, // recommended option 
@@ -28,8 +28,8 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync){
         normalize: true, 
         fontHeight: 1001 
       }))
-      .on('glyphs', function(glyphs, options) {
-        gulp.src(path.join(dirs.source, dirs.css, '_generic_icons_template.scss'))
+      .on('glyphs', (glyphs, options) => {
+        gulp.src(path.join(dirs.source, dirs.styles, '_generic_icons_template.scss'))
           .pipe(plugins.consolidate('lodash', {
             glyphs: glyphs,
             fontName: iconFontSettings.fontName,
@@ -37,8 +37,9 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync){
             className: iconFontSettings.className
           }))
           .pipe(plugins.rename('_generic.icons.scss'))
-          .pipe(gulp.dest(path.join(dirs.source, dirs.css, '03_generic')))
+          .pipe(gulp.dest(path.join(dirs.source, dirs.styles, '03_generic')))
       })
       .pipe(gulp.dest(dest));
   });
+
 }

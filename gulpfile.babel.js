@@ -24,8 +24,7 @@ let browserSync = browserSyncLib.create();
 wrench.readdirSyncRecursive('./gulp').filter((file) => {
   return (/\.(js)$/i).test(file);
 }).map(function(file) {
-	console.log(file);
-	require('./gulp/' + file)(gulp, plugins, args, config, taskTarget, browserSync);
+	require('./gulp/' + file)(gulp, plugins, args, config, taskTarget, browserSync, dirs);
 });
 
 // gulp.task('complete',['bower', 'imagemin', 'iconfont', 'fonts', 'sass', 'jade', 'webpack', 'dirsync', 'rootfiles', 'browserSync', 'watch' ]);
@@ -43,7 +42,8 @@ gulp.task('build', [
   'fonts',
   'jade',
   'sass',
-  'webpack'
+  'webpack',
+  'browserSync'
 ]);
 
 // // Server tasks with watch
@@ -57,5 +57,5 @@ gulp.task('build', [
 //   'watch'
 // ]);
 
-// // Testing
-// gulp.task('test', ['eslint']);
+// Testing
+gulp.task('test', ['eslint']);

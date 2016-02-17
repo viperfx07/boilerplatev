@@ -1,4 +1,6 @@
-var $ = window.$ = window.jQuery = require('./vendor/jquery/jquery.min.js');
+import $ 
+import window.$ 
+import window.jQuery from './vendor/jquery/jquery.js';
 
 $.fn.slideFadeToggle = function (speed, easing, callback) {
     return this.animate({

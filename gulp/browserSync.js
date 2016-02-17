@@ -1,22 +1,6 @@
-// var gulp = require('gulp'),
-// 	browserSync = require('browser-sync').create();
-
-// gulp.task('browserSync', function () {
-// 	browserSync.init(
-// 		['www/assets/css/*.css',
-// 			'www/**/*.html',
-// 			'www/assets/img/*',
-// 			'www/assets/js/*.js'], {
-// 		server: {
-// 			baseDir: 'www'
-// 		}
-// 	});
-// });
-
-
 'use strict';
 
-export default function(gulp, plugins, args, config, taskTarget, browserSync) {
+export default function(gulp, plugins, args, config, taskTarget, browserSync, dirs) {
   // BrowserSync
   gulp.task('browserSync', () => {
     browserSync.init({

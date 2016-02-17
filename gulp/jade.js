@@ -5,8 +5,7 @@ import path from 'path';
 import foldero from 'foldero';
 import jade from 'jade';
 
-export default function(gulp, plugins, args, config, taskTarget, browserSync) {
-  let dirs = config.directories;
+export default function(gulp, plugins, args, config, taskTarget, browserSync, dirs) {
   let dest = path.join(taskTarget);
   let dataPath = path.join(dirs.source, dirs.data);
 
