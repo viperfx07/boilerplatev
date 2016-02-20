@@ -69,6 +69,7 @@
     }
   },
   "dependencies": {
+    "breakpoint-sass": "^2.6.1",
     "dropkickjs": "^2.1.7",
     "jquery": "^2.2.0",
     "jquery-match-height": "^0.7.0",

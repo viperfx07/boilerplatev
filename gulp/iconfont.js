@@ -29,7 +29,7 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync, di
         fontHeight: 1001 
       }))
       .on('glyphs', (glyphs, options) => {
-        gulp.src(path.join(dirs.source, dirs.styles, '_generic_icons_template.scss'))
+        gulp.src(path.join(dirs.source, dirs.icons, 'icons_template.scss'))
           .pipe(plugins.consolidate('lodash', {
             glyphs: glyphs,
             fontName: iconFontSettings.fontName,

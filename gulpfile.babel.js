@@ -43,19 +43,22 @@ gulp.task('build', [
   'jade',
   'sass',
   'webpack',
-  'browserSync'
+  'browserSync',
+  'watch'
 ]);
 
-// // Server tasks with watch
-// gulp.task('serve', [
-//   'imagemin',
-//   'copy',
-//   'jade',
-//   'sass',
-//   'webpack',
-//   'browserSync',
-//   'watch'
-// ]);
+// Server tasks with watch
+gulp.task('serve', [
+  'imagemin',
+  'iconfont',
+  'fonts',
+  'copy',
+  'jade',
+  'sass',
+  'webpack',
+  'browserSync',
+  'watch'
+]);
 
 // Testing
 gulp.task('test', ['eslint']);
