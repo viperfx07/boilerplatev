@@ -5,3 +5,4 @@ tmp/
 src/js/vendor/
 .DS_Store
 *.log
+www/

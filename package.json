@@ -4,6 +4,7 @@
   "devDependencies": {
     "babel-core": "^6.5.2",
     "babel-eslint": "^4.1.8",
+    "babel-loader": "^6.2.3",
     "babel-plugin-add-module-exports": "^0.1.2",
     "babel-preset-es2015": "^6.5.0",
     "babelify": "^7.2.0",
@@ -38,6 +39,7 @@
     "marked": "latest",
     "minimist": "^1.2.0",
     "webpack": "latest",
+    "webpack-stream": "^3.1.0",
     "wrench": "^1.5.8"
   },
   "//": "CUSTOM CONFIGURATION",
@@ -65,5 +67,11 @@
       "js": "main**.js",
       "css": "main**.{sass,scss}"
     }
+  },
+  "dependencies": {
+    "dropkickjs": "^2.1.7",
+    "jquery": "^2.2.0",
+    "jquery-match-height": "^0.7.0",
+    "owl-carousel-2": "0.0.3"
   }
 }
