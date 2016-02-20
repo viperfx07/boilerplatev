@@ -64,7 +64,7 @@
       "data": "_data"
     },
     "entries": {
-      "js": "main**.js",
+      "js": "main.js",
       "css": "main**.{sass,scss}"
     }
   },

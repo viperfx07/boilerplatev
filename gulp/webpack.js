@@ -5,16 +5,16 @@ import webpack from 'webpack';
 import webpackStream from 'webpack-stream';
 
 export default function(gulp, plugins, args, config, taskTarget, browserSync, dirs) {
-    
-    let dest = path.join(taskTarget, dirs.assets, dirs.scripts.replace(/^_/, ''));
+    let assetsJs = path.join(dirs.assets, dirs.scripts.replace(/^_/, ''), '/');
+    let dest = path.join(taskTarget, assetsJs);
     let webpackSettings = {
         output: {
             //path that will be considered when requiring your files
             //this is used when splitting the codes as well
-            publicPath: "/assets/js/",
+            publicPath: assetsJs,
 
             //filename of the main app file
-            filename: 'bundle.js'
+            filename: config.entries.js
         },
         module: {
             loaders: [
@@ -26,7 +26,7 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync, di
 
     if(args.production){
         webpackSettings.devtool = 'source-map';
-        webpackSettings.output.filename = 'bundle.js';
+        webpackSettings.output.filename = config.entries.js;
         webpackSettings.plugins = [ 
             new webpack.optimize.UglifyJsPlugin({
                 minimize: true
@@ -35,7 +35,7 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync, di
     }
 
     gulp.task('webpack', () => {
-      return gulp.src(path.join(dirs.source, dirs.scripts, 'main.js'))
+      return gulp.src(path.join(dirs.source, dirs.scripts, config.entries.js))
         .pipe(plugins.plumber())
         .pipe(webpackStream(webpackSettings))
         .pipe(gulp.dest(dest));
