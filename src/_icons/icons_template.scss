@@ -26,7 +26,7 @@
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-  @include inline-block;
+  display: inline-block;
 
   // Better Font Rendering
   -webkit-font-smoothing: antialiased;

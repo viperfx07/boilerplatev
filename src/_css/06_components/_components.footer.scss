@@ -1,5 +1,5 @@
 .footer{
-	@extend %p-clearfix;
+	@include m-clearfix;
 	color: #fff;
 	padding-bottom: 50px;
 }

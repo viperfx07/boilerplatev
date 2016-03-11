@@ -39,6 +39,7 @@
     "lodash": "latest",
     "marked": "latest",
     "minimist": "^1.2.0",
+    "postcss-import": "^8.0.2",
     "webpack": "latest",
     "webpack-stream": "^3.1.0",
     "wrench": "^1.5.8"

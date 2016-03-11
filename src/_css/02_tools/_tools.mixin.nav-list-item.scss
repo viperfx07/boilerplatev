@@ -3,6 +3,6 @@ This is the mixin to style the <li> or other list tag
 as a float left nav
  */
 @mixin m-nav-list-item{
-	@include inline-block;
+	display: inline-block;
 	float: left;	
 }

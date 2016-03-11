@@ -3,6 +3,7 @@
 import path from 'path';
 import autoprefixer from 'autoprefixer';
 import gulpif from 'gulp-if';
+import atImport from 'postcss-import';
 
 export default function(gulp, plugins, args, config, taskTarget, browserSync, dirs) {
   let entries = config.entries;
@@ -13,9 +14,7 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync, di
     gulp.src(path.join(dirs.source, dirs.styles, entries.css))
       .pipe(plugins.plumber())
       .pipe(plugins.sourcemaps.init())
-      .pipe(plugins.cssGlobbing({
-			extensions: ['.scss']
-		}))
+      .pipe(plugins.cssGlobbing({	extensions: ['.scss']	}))
       .pipe(plugins.sass({
       	// css: 'www/assets/css',
 		// sass: 'src/scss/**/*',
@@ -26,7 +25,10 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync, di
           path.join(dirs.source, dirs.modules)
         ]
       }).on('error', plugins.sass.logError))
-      .pipe(plugins.postcss([autoprefixer({browsers: ['last 2 version', '> 5%', 'safari 5', 'ios 6', 'android 4']})]))
+      .pipe(plugins.postcss([
+          autoprefixer({browsers: ['last 2 version', '> 5%', 'safari 5', 'ios 6', 'android 4', 'ie 9']}),
+          atImport()
+        ]))
       .pipe(plugins.rename(function(path) {
         // Remove 'source' directory as well as prefixed folder underscores
         // Ex: 'src/_styles' --> '/styles'

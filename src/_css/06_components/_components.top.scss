@@ -2,7 +2,7 @@
    
    //.top-menu
     &-menu{
-        @extend %p-clearfix;
+        @include m-clearfix;
 
         //.top-menu__list
         &__list{
@@ -40,7 +40,7 @@
                 text-align: center;
                 font-family: Lato;
                 font-weight: bold;
-                @include adjust-font-size-to(18px);
+                font-size: 18px;
                 line-height: 45px;
             }
         }     
@@ -48,7 +48,7 @@
 
    //.top-right
     &-right{
-        @extend %p-clearfix;
+        @include m-clearfix;
 
         //.top-right-social-icons
         &-social-icons{
@@ -66,11 +66,9 @@
                 //.top-right-social-icons__list-link
                 &-link{
                     color: f-color('darkBrown');
-                    @include adjust-font-size-to(24px);
+                    font-size: 24px;
                 }
             }
         }
     }
-
-               
 }
