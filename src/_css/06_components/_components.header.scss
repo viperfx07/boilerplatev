@@ -1,2 +1,64 @@
 .header{
+	&__top{
+		@include clearfix;
+		padding: rem-calc(24) rem-calc(16);
+
+	}
+
+	&__logo{
+		float: left;
+		&-divider{
+			padding-left: rem-calc(20);
+			padding-right: rem-calc(20);
+		}
+	}
+
+	&__tag{
+		@include m-color('dark-grey');
+		float: left;
+		&-top{
+			@include open-sans;
+			font-weight: 600;
+			font-size: 1rem;
+			display: block;
+		}
+
+		&-bottom{
+			@include slabo;
+			font-size: rem-calc(30);
+			display: block;
+			line-height: 1;
+			font-weight: 400;
+		}
+	}
+
+	&__resource-link{
+		@include m-color('dark-grey');
+		@include clearfix;
+		float: left;
+		&-top{
+			@include open-sans-semibold;
+			font-size: rem-calc(16);
+			display: block;
+		}
+
+		&-bottom{
+			@include slabo;
+			font-size: rem-calc(38);
+			display: block;
+			line-height: 1;
+
+			&--employers{
+				@include m-color('employers');
+			}
+
+			&--employees{
+				@include m-color('employees');
+			}
+		}
+
+		& + & {
+			margin-left: 20px;
+		}
+	}
 }

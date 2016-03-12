@@ -1,19 +1,35 @@
 nav.secondary-menu
-	.row
-		ul
-			each item in site.data.secondarymenu
-				li(class=item.liClass)
-					a(href=item.href)=item.title
+	.row.large-collapse
+		.large-offset-6.large-6.columns
+			ul
+				each item in site.data.secondarymenu
+					li(class=item.liClass)
+						a(href=item.href)=item.title
 
-header.header
+.header__top
 	.row
-		.logo
-		.tag
-		.toggle
-	.row
-		.employers-link
-		.employees-link
-		.mobile-nav-toggle
+		.large-6.columns
+			.header__logo
+				a(href="#", title="Home")
+					img(src="assets/img/logo.png", alt="logo")
+				span.header__logo-divider
+					img(src="assets/img/divider.svg", alt="divider")
+			.header__tag
+				small.header__tag-top With focus on the
+				strong.header__tag-bottom Livestock industry
+
+			.toggle
+		.large-6.columns
+			.row
+				.large-4.columns
+					.header__resource-link
+						small.header__resource-link-top Resources for
+						strong.header__resource-link-bottom.header__resource-link-bottom--employers Employers
+				.large-4.columns.end
+					.header__resource-link
+						small.header__resource-link-top Guides for
+						strong.header__resource-link-bottom.header__resource-link-bottom--employees Employees
+			.mobile-nav-toggle
 	.row
 		.hero
 	.row

@@ -2,7 +2,7 @@ import wf from 'webfontloader';
 
 wf.load({
     google: {
-      families: ['Open Sans:400,400italic,600,600italic,700,700italic', 'Slabo27px:400,400italic,600,600italic']
+      families: ['Open Sans:400,600:latin', 'Slabo 27px:400,600:latin']
     }
 });
 

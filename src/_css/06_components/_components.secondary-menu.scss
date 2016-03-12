@@ -1,24 +1,21 @@
 .secondary-menu{
-	@include open-sans;
-	font-weight: 600;
+	@include open-sans-semibold;
 	font-size: rem-calc(12);
 	
 	@include m-bgcolor('black');
 	
 	ul{
 		@include m-nav-list;
-		float:right;
-		margin-right: 160px;
-		
 		li{
 			@include m-nav-list-item;
-			padding-left: rem-calc(14);
-			padding-right: rem-calc(14);
 		}
 	}
 
 	a{
 		color: #fff;
 		line-height: 24px;
+		padding-left: rem-calc(14);
+		padding-right: rem-calc(14);
+		display: block;
 	}
 }

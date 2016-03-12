@@ -3,3 +3,5 @@
 // }
 
 @mixin open-sans(){ font-family: 'Open Sans', sans-serif;}
+@mixin open-sans-semibold(){ font-family: 'Open Sans', sans-serif; font-weight: 600;}
+@mixin slabo(){ font-family: 'Slabo 27px', sans-serif;}
