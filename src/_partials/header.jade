@@ -1,0 +1,21 @@
+nav.secondary-menu
+	.row
+		ul
+			each item in site.data.secondarymenu
+				li(class=item.liClass)
+					a(href=item.href)=item.title
+
+header.header
+	.row
+		.logo
+		.tag
+		.toggle
+	.row
+		.employers-link
+		.employees-link
+		.mobile-nav-toggle
+	.row
+		.hero
+	.row
+		.employers-links
+		.employees-links

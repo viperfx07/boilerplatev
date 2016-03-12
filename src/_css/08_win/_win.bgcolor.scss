@@ -1,0 +1,10 @@
+.bgcolor{
+	&-employees{
+		background-color: f-color('employees') !important;
+	}
+
+	&-employers{
+		background-color: f-color('employers') !important;
+	}
+}
+

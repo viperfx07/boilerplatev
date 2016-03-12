@@ -1,0 +1,8 @@
+[
+	{"title":"About", "href":"#"},
+	{"title":"What's new", "href":"#"},
+	{"title":"Stay updated", "href":"#"},
+	{"title":"Q&A", "href":"#", "liClass": "bgcolor-employees"},
+	{"title":"Success stories", "href":"#", "liClass": "bgcolor-employers"},
+	{"title":"Contact", "href":"#"}
+]

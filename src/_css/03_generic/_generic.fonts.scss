@@ -1,3 +1,5 @@
-@each $name, $path in $fonts{
-  @include m-font-face($name, $path);
-}
+// @each $name, $path in $fonts{
+//   @include m-font-face($name, $path);
+// }
+
+@mixin open-sans(){ font-family: 'Open Sans', sans-serif;}

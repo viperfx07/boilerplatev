@@ -1,0 +1,15 @@
+@import 'util/util';
+
+$global-width: rem-calc(1366);
+
+$breakpoints: (
+  small: 0,
+  bp480: 480px,
+  medium: 640px,
+  large: 1024px,
+  xlarge: 1200px,
+  xxlarge: 1366px,
+);
+
+$breakpoint-classes: (small bp480 medium large xlarge xxlarge);
+

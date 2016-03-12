@@ -4,7 +4,7 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync, di
   // BrowserSync
   gulp.task('browserSync', () => {
     browserSync.init({
-      open: args.open ? 'local' : false,
+      open: 'local',
       startPath: config.baseUrl,
       port: config.port || 3000,
       server: {

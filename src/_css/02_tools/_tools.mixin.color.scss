@@ -2,6 +2,6 @@
 	color: map-get($colors, $colorName);
 }
 
-@mixin m-bg-color($colorName){
+@mixin m-bgcolor($colorName){
 	background-color: map-get($colors, $colorName);
 }
