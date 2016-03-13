@@ -1,0 +1,15 @@
+.btn{
+	display: block;
+	font-size: rem-calc(12);
+	line-height: 2;
+	text-align: center;
+	width: rem-calc(92);
+	height: rem-calc(24);
+	color: #ffffff;
+	border-radius: 20px;
+	@include m-bgcolor('blue');
+
+	&:hover, &:focus{
+		color: #ffffff;
+	}
+}

@@ -1,5 +1,67 @@
 .footer{
 	@include clearfix;
+	@include m-bgcolor('black');
 	color: #fff;
-	padding-bottom: 50px;
+	padding-top: rem-calc(50);
+	padding-bottom: rem-calc(38);
+	
+	// {{footer-logo}}
+	&-logo{
+		float: left;
+		margin-right: rem-calc(104);
+	}
+
+	// {{footer-nav}}
+	&-nav{
+		float: left;
+		@include open-sans-semibold;
+		font-size: rem-calc(12);
+		padding: rem-calc(5) 0;
+
+		// {{footer-nav__list}}
+		&__list{
+			@include m-nav-list;
+			
+			// {{footer-nav__list-item}}
+			&-item{
+				@include m-nav-list-item;
+				margin-right: rem-calc(22);
+				a{
+					color: inherit;
+				}
+
+				&:last-child{
+					margin-right: 0;
+				}
+			}
+		}
+	}
+
+	// {{footer-tag}}
+	&-tag{
+		@include slabo;
+		font-size: rem-calc(30);
+		text-align: center;
+	}
+
+	// {{footer-dev}}
+	&-dev{
+		display: block;
+		@include open-sans;
+		font-size: rem-calc(12);
+
+		&__link{
+			color: inherit;
+		}
+	}
+	
+	// {{footer-gotop}}
+	&-gotop{
+		// {{footer-gotop__link}}
+		&__link{
+			@include open-sans-semibold;
+			color: inherit;
+			font-size: rem-calc(15);
+		}
+	}
 }

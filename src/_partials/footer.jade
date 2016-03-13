@@ -4,15 +4,17 @@
 .row
 	.carousel
 .row
-	.footer-logo
-	nav.footer-nav
-		ul
-			each item in site.data.footermenu
-				li
-					a(href=item.href, title=item.title)=item.title
+	.small-12.columns
+		.footer-logo
+			img(src="assets/img/footer-logo.png", alt="People in Agriculture logo")
+		nav.footer-nav
+			ul.footer-nav__list
+				each item in site.data.footermenu
+					li.footer-nav__list-item
+						a(href=item.href, title=item.title)=item.title
 
-	small.footer-dev Site Design and development by <a href="http://adelphi.digital" target="_blank">Adelphi.digital</a>
-	.footer-social
-		p Share our website
-	.footer-top-links
-		a(href="#", title="Go to top") TOP
+			small.footer-dev Site Design and development by <a href="http://adelphi.digital" target="_blank" class="footer-dev__link">Adelphi.digital</a>
+		.footer-social
+			p Share our website
+		.footer-gotop
+			a.footer-gotop__link(href="#", title="Go to top") TOP
