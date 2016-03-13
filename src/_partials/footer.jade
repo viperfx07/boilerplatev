@@ -1,2 +1,18 @@
-.container
-	p Copyright &copy; 2015
+.row
+	.small-12.columns
+		p.footer-tag People in Agriculture is made for the industry by the industry, we thank all those involved
+.row
+	.carousel
+.row
+	.footer-logo
+	nav.footer-nav
+		ul
+			each item in site.data.footermenu
+				li
+					a(href=item.href, title=item.title)=item.title
+
+	small.footer-dev Site Design and development by <a href="http://adelphi.digital" target="_blank">Adelphi.digital</a>
+	.footer-social
+		p Share our website
+	.footer-top-links
+		a(href="#", title="Go to top") TOP

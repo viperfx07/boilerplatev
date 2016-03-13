@@ -1,0 +1,85 @@
+.main{
+	// {{main-section}}
+	&-section{
+		// {{main-section__title}}
+		&__title{
+			@include slabo;
+			@include m-color("dark-grey");
+			text-align: center;
+		}
+
+		h1,h2,h3{
+			@include slabo;
+		}
+
+		h1{
+			font-size: rem-calc(38);
+		}
+		h2{
+			font-size: rem-calc(22);
+		}
+
+		p{
+			@include m-color("dark-grey");
+		}
+
+		p, a{
+			@include open-sans;
+		}
+	}
+
+	// {{main-faq}}
+	&-faq{
+		// {{main-faq__top}}
+		&__top{
+			@include clearfix;
+		}
+
+		// {{main-faq__title}}
+		&__title{
+			@include slabo;
+			float: left;
+		}
+
+		// {{main-faq__see-all}}
+		&__see-all{
+			float: right;
+		}
+
+		// {{main-faq__list}}
+		&__list{
+			list-style-type: none;
+			margin-left: rem-calc(8);
+			
+			// {{main-faq__list-item}}
+			&-item{
+				@include open-sans;
+				padding: rem-calc(8) 0;
+			}
+		}
+	}
+	
+	// {{main-story}}
+	&-story{
+		// {{main-story__text}}
+		&__text{
+			padding-left: rem-calc(20);
+			padding-right: rem-calc(20);	
+		}
+		
+		// {{main-story__title}}
+		&__title{
+
+		}
+
+		// {{main-story__desc}}
+		&__desc{
+		}
+
+		// {{main-story__readmore}}
+		&__readmore{
+			padding-left: rem-calc(20);
+			padding-right: rem-calc(20);
+		}
+	}
+}

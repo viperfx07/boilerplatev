@@ -1,8 +1,0 @@
-.col{
-	&-640{
-		&-70p{
-			//30px is the standard of (left + right gutters) size
-			@include make-column(70%, 640px, 30px);
-		}
-	}
-}

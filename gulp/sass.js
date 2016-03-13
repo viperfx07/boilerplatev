@@ -4,6 +4,7 @@ import path from 'path';
 import autoprefixer from 'autoprefixer';
 import gulpif from 'gulp-if';
 import atImport from 'postcss-import';
+import oldie from 'oldie';
 
 export default function(gulp, plugins, args, config, taskTarget, browserSync, dirs) {
   let entries = config.entries;
@@ -16,8 +17,6 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync, di
       .pipe(plugins.sourcemaps.init())
       .pipe(plugins.cssGlobbing({	extensions: ['.scss']	}))
       .pipe(plugins.sass({
-      	// css: 'www/assets/css',
-		// sass: 'src/scss/**/*',
         outputStyle: 'compressed',
         precision: 10,
         includePaths: [
@@ -41,3 +40,5 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync, di
       .pipe(browserSync.stream({match: '**/*.css'}));
   });
 }
+
+

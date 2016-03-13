@@ -4,7 +4,7 @@ nav.secondary-menu
 			ul
 				each item in site.data.secondarymenu
 					li(class=item.liClass)
-						a(href=item.href)=item.title
+						a(href=item.href, title=item.title)=item.title
 
 .header__top
 	.row
@@ -21,17 +21,12 @@ nav.secondary-menu
 			.toggle
 		.large-6.columns
 			.row
-				.large-4.columns
+				.small-6.large-4.columns
 					.header__resource-link
 						small.header__resource-link-top Resources for
 						strong.header__resource-link-bottom.header__resource-link-bottom--employers Employers
-				.large-4.columns.end
+				.small-6.large-4.columns.end
 					.header__resource-link
 						small.header__resource-link-top Guides for
 						strong.header__resource-link-bottom.header__resource-link-bottom--employees Employees
 			.mobile-nav-toggle
-	.row
-		.hero
-	.row
-		.employers-links
-		.employees-links

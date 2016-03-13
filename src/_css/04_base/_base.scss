@@ -23,15 +23,18 @@ html{
 
 body{
 	font-family: Arial, sans-serif;
-	color: #333333;
+	@include m-color('black');
   	background-color: #ffffff;
 }
 
+a{
+	@include m-color('employees');
+}
+
 header{
-	@extend %p-clearfix;
+	@include clearfix;
 }
 
 footer{
-	@extend %p-clearfix;
-	background: #2e2e2e;
+	@include m-bgcolor('dark-blue')
 }
