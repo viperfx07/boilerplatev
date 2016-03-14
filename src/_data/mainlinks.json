@@ -1,0 +1,15 @@
+{
+	"employers":[
+		{"title": "How do I employ someone?", "href": "#"},
+		{"title": "What are my responsibilities?", "href": "#"},
+		{"title": "Where do I find employees?", "href": "#"},
+		{"title": "How much do I pay someone?", "href": "#"}
+	],
+
+	"employees":[
+		{"title": "Why work in Agriculture?", "href": "#"},
+		{"title": "How do I find a job?", "href": "#"},
+		{"title": "How much do I get paid?", "href": "#"},
+		{"title": "What industry should I get into?", "href": "#"}
+	]
+}

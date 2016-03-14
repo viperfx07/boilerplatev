@@ -35,6 +35,14 @@ wf.load({
                 });
             });
         }
+
+        if ($('[data-mh]').length) {
+
+            //load dropkick async-ly
+            require.ensure([], () => {
+                require('jquery-match-height');
+            });
+        }
         
     });
 })(jQuery);

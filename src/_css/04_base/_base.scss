@@ -31,6 +31,11 @@ a{
 	@include m-color('blue');
 }
 
+small{
+	@include open-sans;
+	font-size: rem-calc(12);
+}
+
 header{
 	@include clearfix;
 }

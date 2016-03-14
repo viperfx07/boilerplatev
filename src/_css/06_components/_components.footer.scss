@@ -3,12 +3,17 @@
 	@include m-bgcolor('black');
 	color: #fff;
 	padding-top: rem-calc(50);
-	padding-bottom: rem-calc(38);
 	
 	// {{footer-logo}}
 	&-logo{
 		float: left;
 		margin-right: rem-calc(104);
+		padding-bottom: rem-calc(38);
+		display: none;
+
+		@include mq(medium){
+			display: block;
+		}
 	}
 
 	// {{footer-nav}}
@@ -17,10 +22,17 @@
 		@include open-sans-semibold;
 		font-size: rem-calc(12);
 		padding: rem-calc(5) 0;
+		padding-bottom: rem-calc(38);
+		display: none;
+
+		@include mq(medium){
+			display: block;
+		}
 
 		// {{footer-nav__list}}
 		&__list{
 			@include m-nav-list;
+			margin-bottom: rem-calc(5);
 			
 			// {{footer-nav__list-item}}
 			&-item{
@@ -54,14 +66,42 @@
 			color: inherit;
 		}
 	}
+	// {{footer-right}}
+	&-right{
+		@include clearfix;
+
+		@include mq(medium){
+			float: right;	
+		}
+		
+	}
+	// {{footer-social}}
+	&-social{
+		float: left;
+		margin-right: rem-calc(55);
+		&__text{
+			@include open-sans-semibold;
+			font-size: rem-calc(12);
+		}
+	}
 	
 	// {{footer-gotop}}
 	&-gotop{
+		@include clearfix;
+		float: left;
+		width: rem-calc(110);
+		height: rem-calc(110);
+		text-align: center;
+		border-left: 1px solid #0c1010;
+		position: relative;
+		
 		// {{footer-gotop__link}}
 		&__link{
 			@include open-sans-semibold;
+			@include absolute-center;
 			color: inherit;
 			font-size: rem-calc(15);
+			display: block;
 		}
 	}
 }
