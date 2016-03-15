@@ -1,5 +1,5 @@
 import wf from 'webfontloader';
-import 'slick-carousel';
+import $ from 'jquery';
 wf.load({
     google: {
       families: ['Open Sans:400,600:latin', 'Slabo 27px:400:latin']
@@ -26,7 +26,7 @@ wf.load({
         if ($('[data-slick]').length) {
             //load slick async-ly
             require.ensure([], () => {
-                // require('slick-carousel');
+                require('slick-carousel');
                 $('[data-slick]').slick();
             });
         }

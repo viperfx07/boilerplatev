@@ -52,7 +52,6 @@
 	// {{main-links}}
 	&-links{
 		position: relative;
-		
 		color: #ffffff;
 
 		@include mq(medium){
@@ -92,8 +91,7 @@
 					@include horizontal-center;
 				}
 			}
-			
-			
+
 			// {{main-links__link-box--employers}}
 			&--employers{
 				&:before, &:after{
@@ -155,6 +153,35 @@
 					color: inherit;
 				}
 			}
+		}
+
+		// {{main-links__icon}}
+		&__icon{
+			width: 47px;
+			height: 41px;
+			border-radius: 8px;
+			
+			@include mq(medium){
+				@include absolute-center;
+
+				.main-links__link-box--employers &{
+					@include m-bgcolor('employers-dark');
+				}
+
+				.main-links__link-box--employees &{
+					@include m-bgcolor('employees-dark');
+				}
+			}
+
+			&:before{
+				@include m-sprite('slider-right');
+				content: '';
+				width: 10px;
+				height: 17px;
+				@include absolute-center;
+			}
+			
+
 		}
 		
 		// {{main-links--employers}}
@@ -225,6 +252,7 @@
 		// {{main-faq__see-all}}
 		&__see-all{
 			float: right;
+			text-align: center;
 			&:hover, &:focus{
 				color: #ffffff;
 			}
@@ -233,6 +261,8 @@
 				content:'';
 			}
 		}
+
+
 
 		// {{main-faq__list}}
 		&__list{
@@ -247,9 +277,31 @@
 			// {{main-faq__list-item}}
 			&-item{
 				@include open-sans;
+				@include clearfix;
+				position: relative;
 				padding: rem-calc(8) 0;
+
+				// {{main-faq__list-item__question}}
+				&__question{
+					margin-right: rem-calc(35);
+					float: left;
+				}
+
+				&__child-toggle{
+					@include m-sprite('rounded-plus');
+					@include vertical-center;
+					width: 25px;
+					height: 24px;
+					display: block;
+					right: 0;
+					&.js-open, &.is-open{
+						//for close style
+					}
+				}
 			}
 		}
+
+		
 	}	
 
 	// {{main-stories}}

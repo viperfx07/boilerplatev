@@ -23,6 +23,7 @@ block content
 									each item in site.data.mainlinks.employers
 										li.main-links__list-item
 											a(href=item.href, title=item.title)=item.title
+								.main-links__icon
 
 				.large-6.columns
 					.main-links.main-links--employees
@@ -37,6 +38,7 @@ block content
 									each item in site.data.mainlinks.employees
 										li.main-links__list-item
 											a(href=item.href, title=item.title)=item.title
+								.main-links__icon
 		
 	.row.main-section.main-secondary
 		.large-3.columns.text-center(data-mh="main-secondary")
@@ -70,47 +72,71 @@ block content
 		.large-push-1.large-5.columns
 			.main-faq__top
 				h2.main-faq__title Job seekers
-				a.main-faq__see-all.btn(href="#", title="See all") See all
+				a.main-faq__see-all.btn.btn--with-right-arrow(href="#", title="See all") See all
 			ul.main-faq__list
 				li.main-faq__list-item
-					a(href="#") What should I ask a prospective employee at an interview?
+					a(href="#").main-faq__list-item__question What should I ask a prospective employee at an interview?
+					a(href="#").main-faq__list-item__child-toggle
+						span.show-for-sr Show answer
 				li.main-faq__list-item
-					a(href="#") How do I create a position description?
+					a(href="#").main-faq__list-item__question How do I create a position description?
+					a(href="#").main-faq__list-item__child-toggle
+						span.show-for-sr Show answer
 				li.main-faq__list-item
-					a(href="#") What should I write in a job advertisement?
+					a(href="#").main-faq__list-item__question What should I write in a job advertisement?
+					a(href="#").main-faq__list-item__child-toggle
+						span.show-for-sr Show answer
 		.large-push-1.large-5.columns
 			.main-faq__top
 				h2.main-faq__title Recruitments
-				a.main-faq__see-all.btn(href="#", title="See all") See all
+				a.main-faq__see-all.btn.btn--with-right-arrow(href="#", title="See all") See all
 			ul.main-faq__list
 				li.main-faq__list-item
-					a(href="#") What should I write in a job advertisement?
+					a(href="#").main-faq__list-item__question What should I write in a job advertisement?
+					a(href="#").main-faq__list-item__child-toggle
+						span.show-for-sr Show answer
 				li.main-faq__list-item
-					a(href="#") Are employees legally required to wear helmet?
+					a(href="#").main-faq__list-item__question Are employees legally required to wear helmet?
+					a(href="#").main-faq__list-item__child-toggle
+						span.show-for-sr Show answer
 				li.main-faq__list-item
-					a(href="#") Sharefarmer or employee?
+					a(href="#").main-faq__list-item__question Sharefarmer or employee?
+					a(href="#").main-faq__list-item__child-toggle
+						span.show-for-sr Show answer
 		.large-push-1.large-5.columns
 			.main-faq__top
 				h2.main-faq__title Farm policies and systems
-				a.main-faq__see-all.btn(href="#", title="See all") See all
+				a.main-faq__see-all.btn.btn--with-right-arrow(href="#", title="See all") See all
 			ul.main-faq__list
 				li.main-faq__list-item
-					a(href="#") What should I ask a prospective employee at an interview?
+					a(href="#").main-faq__list-item__question What should I ask a prospective employee at an interview?
+					a(href="#").main-faq__list-item__child-toggle
+						span.show-for-sr Show answer
 				li.main-faq__list-item
-					a(href="#") How do I create a position description?
+					a(href="#").main-faq__list-item__question How do I create a position description?
+					a(href="#").main-faq__list-item__child-toggle
+						span.show-for-sr Show answer
 				li.main-faq__list-item
-					a(href="#") What should I write in a job advertisement?
+					a(href="#").main-faq__list-item__question What should I write in a job advertisement?
+					a(href="#").main-faq__list-item__child-toggle
+						span.show-for-sr Show answer
 		.large-pull-1.large-5.columns
 			.main-faq__top
 				h2.main-faq__title Engagement and Reward
-				a.main-faq__see-all.btn(href="#", title="See all") See all
+				a.main-faq__see-all.btn.btn--with-right-arrow(href="#", title="See all") See all
 			ul.main-faq__list
 				li.main-faq__list-item
-					a(href="#") What should I write in a job advertisement?
+					a(href="#").main-faq__list-item__question What should I write in a job advertisement?
+					a(href="#").main-faq__list-item__child-toggle
+						span.show-for-sr Show answer
 				li.main-faq__list-item
-					a(href="#") Are employees legally required to wear helmet?
+					a(href="#").main-faq__list-item__question Are employees legally required to wear helmet?
+					a(href="#").main-faq__list-item__child-toggle
+						span.show-for-sr Show answer
 				li.main-faq__list-item
-					a(href="#") Sharefarmer or employee?
+					a(href="#").main-faq__list-item__question Sharefarmer or employee?
+					a(href="#").main-faq__list-item__child-toggle
+						span.show-for-sr Show answer
 	hr
 	section.row.columns.main-section.main-stories
 		h1.main-section__title Real stories
@@ -121,7 +147,7 @@ block content
 				h2.main-story__title Fusce dapibus, tellus ac cursus commodos
 				p.main-story__desc Sed posuere consectetur est at lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel ...
 			.main-story__readmore
-				a.btn(href="#", title="Read more") Read more
+				a.btn.btn--with-right-arrow(href="#", title="Read more") Read more
 		.medium-6.large-3.columns.main-story
 			.main-story__hero
 				img.main-story__hero-img(src="assets/img/story2.jpg", alt="Story 2 image")
@@ -129,7 +155,7 @@ block content
 				h2.main-story__title Cursus Mattis Sem
 				p.main-story__desc Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
 			.main-story__readmore
-				a.btn(href="#", title="Read more") Read more
+				a.btn.btn--with-right-arrow(href="#", title="Read more") Read more
 		.medium-6.large-3.columns.main-story
 			.main-story__hero
 				img.main-story__hero-img(src="assets/img/story3.jpg", alt="Story 3 image")
@@ -137,7 +163,7 @@ block content
 				h2.main-story__title Fermentum Amet Adipiscing Sem
 				p.main-story__desc Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Curabitur blandit tempus porttitor. ....
 			.main-story__readmore
-				a.btn(href="#", title="Read more") Read more
+				a.btn.btn--with-right-arrow(href="#", title="Read more") Read more
 		.medium-6.large-3.columns.main-story
 			.main-story__hero
 				img.main-story__hero-img(src="assets/img/story4.jpg", alt="Story 4 image")
@@ -145,7 +171,7 @@ block content
 				h2.main-story__title Inceptos Porta Pharetra Purus Dapibus
 				p.main-story__desc Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas faucibus mollis interdum. Nulla vitae elit
 			.main-story__readmore
-				a.btn(href="#", title="Read more") Read more
+				a.btn.btn--with-right-arrow(href="#", title="Read more") Read more
 
 block footer
 	include _partials/footer

@@ -1,5 +1,6 @@
 // Add the sprite files in here
-$sprites: toggle-open, toggle-close, email, twitter, facebook, big-arrow-top, slider-left, slider-right;
+$sprites: toggle-open, toggle-close, email, twitter, facebook, big-arrow-top, slider-left, slider-right, rounded-plus,
+	small-right-arrow;
 
 @each $item in $sprites{
 	.sprite-#{$item} {
