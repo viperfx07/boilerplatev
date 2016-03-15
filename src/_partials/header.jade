@@ -12,13 +12,13 @@ nav.secondary-menu
 			.header__logo
 				a(href="#", title="Home")
 					img(src="assets/img/logo.png", alt="logo")
-				span.header__logo-divider
-					img(src="assets/img/divider.svg", alt="divider")
+			.header__logo-divider
+				img(src="assets/img/divider.svg", alt="divider")
 			.header__tag
 				small.header__tag-top With focus on the
 				strong.header__tag-bottom Livestock industry
+			a(href="#").flyout-toggle
 
-			.toggle
 		.large-6.columns
 			.row
 				.small-6.large-4.columns
@@ -30,3 +30,17 @@ nav.secondary-menu
 						small.header__resource-link-top Guides for
 						strong.header__resource-link-bottom.header__resource-link-bottom--employees Employees
 			.mobile-nav-toggle
+.row.flyout
+	.small-12.flyout__content
+		.flyout__top
+			p.flyout-intro Select an industry from below which best capture your interest. <a href="#">If you cannot find any industry that represents you, click here</a>
+			a(href="#").flyout-close-btn Close
+		.flyout__menus
+			each item in site.data.flyoutmenu
+				.flyout-menu
+					a(href="#").flyout-menu__item
+						small.flyout-menu__item-text Focus on
+						.flyout-menu__icon
+							i(class="v-icon v-icon-"+item.icon)
+						strong.flyout-menu__item-name=item.title
+		

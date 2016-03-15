@@ -6,16 +6,19 @@
 	}
 
 	&__logo{
-		float: left;
+		display: inline-block;
 		&-divider{
+			display: inline-block;
 			padding-left: rem-calc(20);
 			padding-right: rem-calc(20);
+			vertical-align: top;
 		}
 	}
 
 	&__tag{
 		@include m-color('dark-grey');
-		float: left;
+		display: inline-block;
+		vertical-align: bottom;
 		&-top{
 			@include open-sans;
 			font-weight: 600;
