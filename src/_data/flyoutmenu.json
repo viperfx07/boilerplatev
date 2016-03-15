@@ -1,7 +1,7 @@
 [
 	{"title" : "Dairy", "href": "#", "icon": "dairy"},
 	{"title" : "Grain", "href": "#", "icon": "grain"},
-	{"title" : "Pork", "href": "#", "icon": "pork"},
+	{"title" : "Pork", "href": "#", "icon": "pork", "isActive": true},
 	{"title" : "Cotton", "href": "#", "icon": "cotton"},
 	{"title" : "Livestock", "href": "#", "icon": "livestock"},
 	{"title" : "Eggs", "href": "#", "icon": "eggs"},

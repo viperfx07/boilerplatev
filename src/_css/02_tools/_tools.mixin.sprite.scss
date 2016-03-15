@@ -1,0 +1,4 @@
+
+@mixin m-sprite($filename){
+	background: url('../_img/sprite/' + $filename + '.png') no repeat 0 0;
+}

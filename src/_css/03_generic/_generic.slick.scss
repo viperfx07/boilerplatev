@@ -1,0 +1,23 @@
+.slick{
+	&-prev, &-next{
+		&:before{
+			content: '';
+			
+			display: block;
+			width: 10px;
+			height: 20px;
+		}
+	}
+	
+	&-prev{
+		&:before{
+			@include m-sprite(slider-left);
+		}
+	}
+
+	&-next{
+		&:before{
+			@include m-sprite(slider-right);
+		}
+	}
+}

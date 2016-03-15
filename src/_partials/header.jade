@@ -17,7 +17,8 @@ nav.secondary-menu
 			.header__tag
 				small.header__tag-top With focus on the
 				strong.header__tag-bottom Livestock industry
-			a(href="#").flyout-toggle
+			a(href="#").flyout-toggle 
+				span.show-for-sr Toggle flyout
 
 		.large-6.columns
 			.row
@@ -38,8 +39,9 @@ nav.secondary-menu
 		.flyout__menus
 			each item in site.data.flyoutmenu
 				.flyout-menu
-					a(href="#").flyout-menu__item
+					a(href="#").flyout-menu__item(class=(item.isActive)? "is-active" : "")
 						small.flyout-menu__item-text Focus on
+						small.flyout-menu__item-text
 						.flyout-menu__icon
 							i(class="v-icon v-icon-"+item.icon)
 						strong.flyout-menu__item-name=item.title

@@ -2,7 +2,18 @@
 	.small-12.columns
 		p.footer-tag People in Agriculture is made for the industry by the industry, we thank all those involved
 .row
-	.carousel
+	.footer-carousel-container
+		.footer-carousel(data-slick='{"slidesToShow":4, "slidesToScroll":1}')
+			a.footer-carousel__item(href="#",data-mh="footer-carousel")
+				img(src="assets/img/slide1.png", alt="Slide image 1")
+			a.footer-carousel__item(href="#",data-mh="footer-carousel")
+				img(src="assets/img/slide2.png", alt="Slide image 2")
+			a.footer-carousel__item(href="#",data-mh="footer-carousel")
+				img(src="assets/img/slide3.png", alt="Slide image 3")
+			a.footer-carousel__item(href="#",data-mh="footer-carousel")
+				img(src="assets/img/slide4.png", alt="Slide image 4")
+			a.footer-carousel__item(href="#",data-mh="footer-carousel")
+				img(src="assets/img/slide5.png", alt="Slide image 5")
 .row
 	.small-12.columns
 		.footer-logo
@@ -17,5 +28,15 @@
 		.footer-right
 			.footer-social
 				small.footer-social__text Share our website
+				ul.footer-social__links
+					li.footer-social__links-item
+						a(href="#").footer-social__icons.sprite-email
+							span.show-for-sr Email
+					li.footer-social__links-item
+						a(href="#").footer-social__icons.sprite-twitter
+							span.show-for-sr Twitter
+					li.footer-social__links-item
+						a(href="#").footer-social__icons.sprite-facebook
+							span.show-for-sr Facebook
 			.footer-gotop
 				a.footer-gotop__link(href="#", title="Go to top") TOP

@@ -1,8 +1,12 @@
 .flyout{
 	position: relative;
 	max-width: rem-calc(1275);
-	
 	z-index: 11;
+	display: none;
+
+	&.is-open, &.js-open{
+		display: block;
+	}
 	
 	// {{flyout__content}}
 	&__content{
@@ -59,7 +63,7 @@
 		height: 25px;
 		vertical-align: bottom;
 		margin-left: rem-calc(15);
-		&.is-open, &.js-is-open{
+		&.is-open, &.js-open{
 			@include m-sprite(toggle-close);
 		}
 	}
@@ -69,7 +73,6 @@
 		float: left;
 		width: grid-column(1 of 7);
 		background-color: #fbfbfb;
-		height: rem-calc(203);
 		text-align: center;
 		padding: rem-calc(25) 0;
 		border-right: 1px solid #eef0f1;
@@ -87,6 +90,14 @@
 				@include slabo;
 				font-size: rem-calc(30);
 			}
+
+			&:hover, &:focus, &.active, &.is-active{
+				@include m-color('employees');
+
+				.flyout-menu__icon{
+					@include m-color('employers');
+				}
+			}
 		}
 
 		&__icon{
@@ -96,7 +107,16 @@
 			.v-icon{
 				vertical-align: middle;
 			}
+
 		}
+
+		@for $i from 4 to 7{
+			&:nth-last-child(#{$i}):first-child, &:nth-last-child(#{$i}):first-child ~ &,
+			&:nth-last-child(#{$i* 2}):first-child, &:nth-last-child(#{$i * 2}):first-child ~ &{
+				width: grid-column(1 of $i);
+			}
+		}
+	
 	}
 	
 }

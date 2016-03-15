@@ -1,10 +1,5 @@
 // Add the sprite files in here
-$sprites: 'toggle-open', 'toggle-close';
-
-@mixin m-sprite($filename){
-	background: url('../_img/sprite/' + $filename + '.png') no repeat 0 0;
-}
-
+$sprites: toggle-open, toggle-close, email, twitter, facebook, big-arrow-top, slider-left, slider-right;
 
 @each $item in $sprites{
 	.sprite-#{$item} {
