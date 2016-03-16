@@ -8,20 +8,20 @@ wf.load({
 
 (()=>{
     $(document).ready(() => {
-        if ($('.owl-carousel').length) {
-            //load owl-carousel async-ly
-            require.ensure([], () => {
-                require('owl-carousel-2/owl.carousel.js');
-                //main carousel
-                $('.footer-carousel').owlCarousel({
-                    nav: true,
-                    items: 5,
-                    loop: true,
-                    center: true,
-                    margin: 30,
-                });
-            });
-        }
+        // if ($('.owl-carousel').length) {
+        //     //load owl-carousel async-ly
+        //     require.ensure([], () => {
+        //         require('owl-carousel-2/owl.carousel.js');
+        //         //main carousel
+        //         $('.footer-carousel').owlCarousel({
+        //             nav: true,
+        //             items: 5,
+        //             loop: true,
+        //             center: true,
+        //             margin: 30,
+        //         });
+        //     });
+        // }
 
         if ($('[data-slick]').length) {
             //load slick async-ly

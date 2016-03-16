@@ -24,6 +24,7 @@
 
 			&__row{
 				height: 100%;
+				min-height: 63px;
 				margin: 0 rem-calc(-15);
 
 				.row &{
@@ -113,15 +114,20 @@
 			float: none;
 		}
 	}
-
+	
+	// {{header__resource-column}}
 	&__resource-column{
+		min-height: rem-calc(63);
+
+		// {{header__resource-column--employers}}
 		&--employers{
 			@include m-bgcolor('employers');
 			@include mq(large){
 				background-color: transparent;
 			}
 		}
-
+		
+		// {{header__resource-column--employees}}
 		&--employees{
 			@include m-bgcolor('employees');
 			@include mq(large){
@@ -150,8 +156,9 @@
 			font-size: rem-calc(12);
 			display: block;
 			color: #ffffff;
-
+			
 			@include mq(large){
+				@include m-color('dark-grey');
 				font-size: rem-calc(16);
 			}
 		}

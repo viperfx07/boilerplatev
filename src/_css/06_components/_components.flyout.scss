@@ -175,8 +175,16 @@
 		&__icon{
 			display: block;
 			width: 100%;
-			font-size: rem-calc(70);
 			transition: all 0.3s;
+			font-size: rem-calc(30);
+
+			@include mq(bp768){
+				font-size: rem-calc(40);
+			}
+
+			@include mq(xlarge){
+				font-size: rem-calc(70);	
+			}
 
 			//-- if using SVG 
 			// fill: f-color('dark-grey');

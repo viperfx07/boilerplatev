@@ -2,6 +2,11 @@
 
 $global-width: rem-calc(1366);
 
+$grid-column-gutter: (
+  small: 30px,
+  medium: 30px,
+);
+
 $breakpoints: (
   small: 0,
   bp480: 480px,

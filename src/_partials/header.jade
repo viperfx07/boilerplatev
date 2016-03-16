@@ -10,7 +10,7 @@ nav.secondary-menu
 
 .header__top
 	.row
-		.bp768-6.columns.header__top-left(data-mh="header-top-side")
+		.bp768-6.columns.header__top-left
 			.header__logo
 				a(href="#", title="Home")
 					img(src="assets/img/logo.png", alt="logo")
@@ -22,7 +22,7 @@ nav.secondary-menu
 				a(href="#").flyout-toggle.header__tag__flyout-toggle
 					span.show-for-sr Toggle flyout
 
-		.bp768-6.header__top-right.columns(data-mh="header-top-side")
+		.bp768-6.header__top-right.columns
 			.row.header__top-right__row
 				.small-5.large-4.columns.header__resource-column.header__resource-column--employers
 					a.header__resource-link.header__resource-link--employers(href="#")
@@ -48,7 +48,7 @@ nav.secondary-menu
 	.small-12.flyout__content
 		.flyout__top
 			.flyout__top-left
-				p.flyout-intro Select an industry from below which best capture your interest. <a href="#">If you cannot find any industry that represents you, click here</a>
+				p.flyout-intro Select an industry from below which best capture your interest. <a href="#" class="show-for-bp768-only">If you cannot find any industry that represents you, click here</a>
 			.flyout__top-right
 				a(href="#").flyout-close-btn
 					span.flyout-close-btn__text CLOSE
