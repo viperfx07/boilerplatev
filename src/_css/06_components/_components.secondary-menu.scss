@@ -1,9 +1,13 @@
 .secondary-menu{
 	@include open-sans-semibold;
-	font-size: rem-calc(12);
-	
 	@include m-bgcolor('black');
-	
+	font-size: rem-calc(12);
+	display: none;
+
+	@include mq('large'){
+		display: block;
+	}
+
 	ul{
 		@include m-nav-list;
 		li{

@@ -10,7 +10,7 @@ block content
 					.main-hero
 						img(src="assets/img/hero.jpg", alt="Hero")
 			.row.main-focus__sub.small-collapse
-				.large-6.columns
+				.medium-6.columns
 					.main-links.main-links--employers
 						.row.collapse
 							.large-4.columns
@@ -25,7 +25,7 @@ block content
 											a(href=item.href, title=item.title)=item.title
 								.main-links__icon
 
-				.large-6.columns
+				.medium-6.columns
 					.main-links.main-links--employees
 						.row.collapse
 							.large-4.columns
@@ -41,25 +41,28 @@ block content
 								.main-links__icon
 		
 	.row.main-section.main-secondary
-		.large-3.columns.text-center(data-mh="main-secondary")
+		.large-3.columns.text-center.main-secondary__column(data-mh="main-secondary")
 			.main-secondary__sponsor-text
 				small Proudly supported by
 			img(src="assets/img/sponsor.jpg")
-		.medium-4.large-3.columns(data-mh="main-secondary")
+		.medium-4.large-3.columns.main-secondary__column(data-mh="main-secondary")
 			.main-secondary__item
-				.main-secondary__img
-					.img
-				p <a href="#">Find dairy industry events in your area</a> with this new calendar featuring events from a range of organisations.
-		.medium-4.large-3.columns(data-mh="main-secondary")
+				.main-secondary__icon
+					i.v-icon.v-icon-calendar
+				.main-secondary__text
+					p <a href="#">Find dairy industry events in your area</a> with this new calendar featuring events from a range of organisations.
+		.medium-4.large-3.columns.main-secondary__column(data-mh="main-secondary")
 			.main-secondary__item
-				.main-secondary__img
-					.img
-				p DairyNZ conuslting officers work in the field with farmers to help them become more successful. <a href="#">Find contact details for your local consulting officer here.</a>
-		.medium-4.large-3.columns(data-mh="main-secondary")
+				.main-secondary__icon
+					i.v-icon.v-icon-woman
+				.main-secondary__text
+					p DairyNZ consulting officers work in the field with farmers to help them become more successful. <a href="#">Find contact details for your local consulting officer here.</a>
+		.medium-4.large-3.columns.main-secondary__column(data-mh="main-secondary")
 			.main-secondary__item
-				.main-secondary__img
-					.img
-				p An El Nino summer is predicted. <a href="#">Are you prepared?</a>
+				.main-secondary__icon
+					i.v-icon.v-icon-daylight
+				.main-secondary__text
+					p An El Nino summer is predicted. <a href="#">Are you prepared?</a>
 	section.row.main-section.main-subhero.collapse
 		.small-12.columns
 			img(src="assets/img/journey.jpg", alt="Explore the journey")

@@ -52,9 +52,9 @@ wf.load({
             });
         }
         
-        $('.flyout-toggle').click(function(){
+        $('.flyout-toggle, .flyout-close-btn').click(function(){
             $('.flyout').toggleClass('js-open');
-            $(this).toggleClass('js-open');
+            $('.flyout-toggle').toggleClass('js-open');    
         });
     });
 })(jQuery);

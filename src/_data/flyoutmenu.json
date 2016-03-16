@@ -6,11 +6,11 @@
 	{"title" : "Livestock", "href": "#", "icon": "livestock"},
 	{"title" : "Eggs", "href": "#", "icon": "eggs"},
 	{"title" : "Fish", "href": "#", "icon": "fish"},
-	{"title" : "Forestry", "href": "#", "icon": "forestry"},
+	{"title" : "Forestry", "href": "#", "icon": "grain"},
 	{"title" : "Wool", "href": "#", "icon": "wool"},
-	{"title" : "Meat", "href": "#", "icon": "meat"},
-	{"title" : "Horticulture", "href": "#", "icon": "horticulture"},
+	{"title" : "Meat", "href": "#", "icon": "livestock"},
+	{"title" : "Horticulture", "href": "#", "icon": "grain"},
 	{"title" : "Grapes", "href": "#", "icon": "grapes"},
-	{"title" : "Sugar", "href": "#", "icon": "sugar"},
-	{"title" : "Meat Export", "href": "#", "icon": "meat-export"}
+	{"title" : "Sugar", "href": "#", "icon": "cotton"},
+	{"title" : "Meat Export", "href": "#", "icon": "livestock"}
 ]

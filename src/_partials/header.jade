@@ -1,3 +1,5 @@
+include ./mixins/flyouticons
+
 nav.secondary-menu
 	.row.large-collapse
 		.large-offset-6.large-6.columns
@@ -8,7 +10,7 @@ nav.secondary-menu
 
 .header__top
 	.row
-		.large-6.columns
+		.bp768-6.columns.header__top-left(data-mh="header-top-side")
 			.header__logo
 				a(href="#", title="Home")
 					img(src="assets/img/logo.png", alt="logo")
@@ -17,32 +19,46 @@ nav.secondary-menu
 			.header__tag
 				small.header__tag-top With focus on the
 				strong.header__tag-bottom Livestock industry
-			a(href="#").flyout-toggle 
-				span.show-for-sr Toggle flyout
+				a(href="#").flyout-toggle.header__tag__flyout-toggle
+					span.show-for-sr Toggle flyout
 
-		.large-6.columns
-			.row
-				.small-6.large-4.columns
-					.header__resource-link
+		.bp768-6.header__top-right.columns(data-mh="header-top-side")
+			.row.header__top-right__row
+				.small-5.large-4.columns.header__resource-column.header__resource-column--employers
+					a.header__resource-link.header__resource-link--employers(href="#")
 						small.header__resource-link-top Resources for
 						strong.header__resource-link-bottom.header__resource-link-bottom--employers Employers
-				.small-6.large-4.columns.end
-					.header__resource-link
+				.small-5.large-4.columns.header__resource-column.header__resource-column--employees
+					a.header__resource-link.header__resource-link--employees(href="#")
 						small.header__resource-link-top Guides for
 						strong.header__resource-link-bottom.header__resource-link-bottom--employees Employees
-			.mobile-nav-toggle
+				.small-2.columns.mobile-toggle-column
+					a.mobile-toggle(href="#")
+						span.show-for-sr Open menu
+						.mobile-toggle__lines
+							span.mobile-toggle__line
+							span.mobile-toggle__line
+							span.mobile-toggle__line
+
+				.header__search(data-mh="hrl")
+					.header__search-icon.v-icon.v-icon-search
+				
+
 .row.flyout
 	.small-12.flyout__content
 		.flyout__top
-			p.flyout-intro Select an industry from below which best capture your interest. <a href="#">If you cannot find any industry that represents you, click here</a>
-			a(href="#").flyout-close-btn Close
+			.flyout__top-left
+				p.flyout-intro Select an industry from below which best capture your interest. <a href="#">If you cannot find any industry that represents you, click here</a>
+			.flyout__top-right
+				a(href="#").flyout-close-btn
+					span.flyout-close-btn__text CLOSE
 		.flyout__menus
 			each item in site.data.flyoutmenu
-				.flyout-menu
-					a(href="#").flyout-menu__item(class=(item.isActive)? "is-active" : "")
-						small.flyout-menu__item-text Focus on
-						small.flyout-menu__item-text
-						.flyout-menu__icon
-							i(class="v-icon v-icon-"+item.icon)
-						strong.flyout-menu__item-name=item.title
+				a(href="#").flyout-menu(class=(item.isActive)? "is-active" : "")
+					small.flyout-menu-text Focus on
+					small.flyout-menu-text.is-active Focusing on
+					.flyout-menu__icon
+						i(class="v-icon v-icon-"+item.icon)
+						//- +flyouticons(item.icon)
+					strong.flyout-menu-name=item.title
 		

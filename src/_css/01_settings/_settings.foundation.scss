@@ -6,10 +6,11 @@ $breakpoints: (
   small: 0,
   bp480: 480px,
   medium: 640px,
+  bp768: 768px,
   large: 1024px,
   xlarge: 1200px,
   xxlarge: 1366px,
 );
 
-$breakpoint-classes: (small bp480 medium large xlarge xxlarge);
+$breakpoint-classes: (small bp480 medium bp768 large xlarge xxlarge);
 

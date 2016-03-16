@@ -6,6 +6,7 @@ import lodash from 'lodash';
 export default function(gulp, plugins, args, config, taskTarget, browserSync, dirs){
   let runTimestamp = Math.round(Date.now()/1000);
   let dest = path.join(dirs.source, dirs.fonts);
+  let dest2 = path.join(taskTarget, dirs.assets, dirs.fonts.replace(/^_/, ''));
 
   //icon font settings
   let iconFontSettings ={
@@ -37,9 +38,10 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync, di
             className: iconFontSettings.className
           }))
           .pipe(plugins.rename('_generic.icons.scss'))
-          .pipe(gulp.dest(path.join(dirs.source, dirs.styles, '03_generic')))
+          .pipe(gulp.dest(path.join(dirs.source, dirs.styles, '03_generic')));
       })
-      .pipe(gulp.dest(dest));
+      .pipe(gulp.dest(dest))
+      .pipe(gulp.dest(dest2));
   });
 
 }

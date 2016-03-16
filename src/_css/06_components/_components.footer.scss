@@ -10,8 +10,7 @@
 	&-logo{
 		float: left;
 		margin: rem-calc(28) rem-calc(104) 0;
-
-		padding-bottom: rem-calc(38);
+		// padding-bottom: rem-calc(38);
 		display: none;
 
 		@include mq(medium){
@@ -24,7 +23,7 @@
 		
 		// {{footer-carousel__container}}
 		&-container{
-			margin: rem-calc(60) auto;
+			margin: rem-calc(50) auto 0 auto;
 			max-width: rem-calc(1152);
 		}
 		
@@ -40,7 +39,7 @@
 		@include open-sans-semibold;
 		font-size: rem-calc(12);
 		padding: rem-calc(5) 0;
-		padding-bottom: rem-calc(38);
+		// padding-bottom: rem-calc(38);
 		margin-top: rem-calc(28);
 		display: none;
 

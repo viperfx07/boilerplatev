@@ -53,6 +53,7 @@
 	&-links{
 		position: relative;
 		color: #ffffff;
+		display: none;
 
 		@include mq(medium){
 			border-radius: 6px;
@@ -141,14 +142,15 @@
 
 			// {{main-links__list-item}}
 			&-item{
+				padding: rem-calc(24);
+				position: relative;
+
 				@include mq(medium){
 					float: left;
 					width: 50%;
 					min-height: rem-calc(105);
 				}
 				
-				padding: rem-calc(16);
-				position: relative;
 				a{
 					color: inherit;
 				}
@@ -352,15 +354,88 @@
 
 	// {{main-secondary}}
 	&-secondary{
-		margin-top: rem-calc(100);
+		margin-top: rem-calc(16);
+		padding-left: rem-calc(15);
+		padding-right: rem-calc(15);
+		@include mq('medium'){
+			margin-top: rem-calc(100);	
+		}
 
 		// {{main-secondary__item}}
 		&__item{
-			padding: 0 rem-calc(35);
+			padding-top: rem-calc(15);
+			padding-bottom: rem-calc(15);
+			display: table;
+			@include mq('medium'){
+				padding: 0 rem-calc(35);	
+			}
+		}
+		
+		// {{main-secondary__icon}}
+		&__icon{
+			@include m-bgcolor('light-grey');
+			@include m-color('dark-grey');
+			font-size: rem-calc(25);
+			width: rem-calc(30);
+			height: rem-calc(30);
+			padding-top: rem-calc(2.5);
+			border-radius: 4px;
+			text-align: center;
+			margin-right: rem-calc(15);
+
+			@include mq('medium'){
+				font-size: rem-calc(50);
+				width: rem-calc(60);
+				height: rem-calc(60);
+				padding-top: rem-calc(5);
+				border-radius: 8px;
+			}
+		}
+
+		// {{main-secondary__text}}
+		&__text{
+			display: table-cell;
+			vertical-align: top;
+			@include mq('medium'){
+				display: block;
+				margin-top: rem-calc(18);	
+			}
+
+			p{
+				margin-bottom: 0;
+
+				& + &{
+					margin-bottom: rem-calc(16);
+				}
+			}
+		}
+
+		&__sponsor{
+			&-text{
+				margin-bottom: rem-calc(8);
+			}
 		}
 
 		.columns + .columns{
-			border-left: 1px solid f-color('light-grey');
+			border-top: 1px solid f-color('light-grey');
+			@include mq('medium'){
+				border-top: 0;
+			}
+
+			@include mq('medium'){
+				border-left: 1px solid f-color('light-grey');	
+				margin-top: rem-calc(32);
+			}
+
+			&:nth-child(2){
+				@include mq('medium'){
+					border-left-width: 0;	
+				}
+
+				@include mq('large'){
+					border-left-width: 1px;	
+				}
+			}
 		}
 	}
 }

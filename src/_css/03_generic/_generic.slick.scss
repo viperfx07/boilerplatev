@@ -1,22 +1,2 @@
-.slick{
-	&-prev, &-next{
-		&:before{
-			content: '';
-			display: block;
-			width: 10px;
-			height: 17px;
-		}
-	}
-	
-	&-prev{
-		&:before{
-			@include m-sprite(slider-left);
-		}
-	}
-
-	&-next{
-		&:before{
-			@include m-sprite(slider-right);
-		}
-	}
-}
+@import '../../node_modules/slick-carousel/slick/slick.scss';
+@import '../../node_modules/slick-carousel/slick/slick-theme.scss';
