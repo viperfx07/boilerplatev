@@ -2,6 +2,7 @@
   "name": "boilerplatev",
   "version": "0.0.0",
   "devDependencies": {
+    "autoprefixer": "^6.3.3",
     "babel-core": "^6.5.2",
     "babel-eslint": "^4.1.8",
     "babel-loader": "^6.2.3",
