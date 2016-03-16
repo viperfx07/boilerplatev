@@ -9,12 +9,17 @@
 	// {{footer-logo}}
 	&-logo{
 		float: left;
-		margin: rem-calc(28) rem-calc(104) 0;
+		margin: rem-calc(28) 5% 0;
 		// padding-bottom: rem-calc(38);
 		display: none;
-
+		
 		@include mq(medium){
 			display: block;
+		}
+		@include mq(bp768){
+			
+			margin-left: rem-calc(104);
+			margin-right: rem-calc(104);
 		}
 	}
 	
@@ -24,6 +29,8 @@
 		// {{footer-carousel__container}}
 		&-container{
 			margin: rem-calc(50) auto 0 auto;
+			padding-left: rem-calc(50);
+			padding-right: rem-calc(50);
 			max-width: rem-calc(1152);
 		}
 		
@@ -87,8 +94,11 @@
 	// {{footer-right}}
 	&-right{
 		@include clearfix;
+		float: none;
+		border-top: 1px solid #000;
 
 		@include mq(medium){
+			border-top: none;
 			float: right;	
 		}
 		
@@ -97,33 +107,60 @@
 	&-social{
 		float: left;
 		margin-top: rem-calc(28);
-		margin-right: rem-calc(55);
+		width: 70%;	
+		text-align: center;
+
+		@include mq(medium){
+			text-align: left;
+			margin-right: rem-calc(55);
+			width: auto;
+		}
+		
+		// {{footer-social__text}}
 		&__text{
 			@include open-sans-semibold;
 			font-size: rem-calc(12);
 			margin-bottom: rem-calc(8);
 			display: block;
 		}
-
+		
+		// {{footer-social__icons}}
 		&__icons{
 			display: inline-block;
 			width: 21px;
 			height: 20px;
 		}
-
+		
+		// {{footer-social__links}}
 		&__links{
 			@include m-nav-list;
-
+			
+			// {{footer-social__links-item}}
 			&-item{
-				@include m-nav-list-item;
-				width: 33.333%;
+				margin-left: rem-calc(10);
+				display: inline-block;
 				
-				&:nth-last-child(3):first-child + li{
-					text-align: center;
+				&:first-child{
+					margin-left: 0;
 				}
-				&:last-child{
-					text-align:right;
+
+
+
+				@include mq(medium){
+					width: 33.333%;
+					margin-left: auto;
+					display: list-item;
+					@include m-nav-list-item;
+					&:nth-last-child(3):first-child + li{
+						text-align: center;
+					}
+					&:last-child{
+						text-align:right;
+					}	
 				}
+				
+
+
 			}
 		}
 	}
@@ -131,12 +168,21 @@
 	// {{footer-gotop}}
 	&-gotop{
 		@include clearfix;
-		float: left;
-		width: rem-calc(110);
+		float: right;
+		width:30%;
+		max-width: rem-calc(193);
 		height: rem-calc(110);
 		text-align: center;
 		border-left: 1px solid #0c1010;
 		position: relative;
+
+		
+		@include mq(medium){
+			float: right;
+			max-width: none;
+			width: rem-calc(110);	
+		}
+		
 		
 		// {{footer-gotop__link}}
 		&__link{

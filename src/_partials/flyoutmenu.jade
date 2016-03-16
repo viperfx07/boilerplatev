@@ -1,0 +1,19 @@
+.row.flyout
+	.small-12.flyout__content
+		.flyout__top
+			.flyout__top-left
+				p.flyout-intro Select an industry from below which best capture your interest. <a href="#" class="show-for-bp768-only">If you cannot find any industry that represents you, click here</a>
+			.flyout__top-right
+				a(href="#").flyout-close-btn
+					span.flyout-close-btn__text CLOSE
+		.flyout__menus
+			each item in site.data.flyoutmenu
+				a(href="#", data-mh="flyout-menu").flyout-menu(class=(item.isActive)? "is-active" : "")
+					small.flyout-menu-text Focus on
+					small.flyout-menu-text.is-active Focusing on
+					.flyout-menu__icon
+						i(class="v-icon v-icon-"+item.icon)
+					strong.flyout-menu-name=item.title
+
+			a(href="#").flyout-menu.flyout-menu--other(data-mh="flyout-menu")
+					strong.flyout-menu-name Other

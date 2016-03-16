@@ -13,12 +13,12 @@ block content
 				.medium-6.columns
 					.main-links.main-links--employers
 						.row.collapse
-							.large-4.columns
+							.small-5.bp480-4.bp768-12.large-4.columns
 								h1.main-links__title
 									span.main-links__title__text
 										span.main-links__title__small Resources for
 										| Employers
-							.large-8.columns.main-links__link-box.main-links__link-box--employers
+							.small-7.bp480-8.bp768-12.large-8.columns.main-links__link-box.main-links__link-box--employers
 								ul.main-links__list
 									each item in site.data.mainlinks.employers
 										li.main-links__list-item
@@ -28,12 +28,12 @@ block content
 				.medium-6.columns
 					.main-links.main-links--employees
 						.row.collapse
-							.large-4.columns
+							.small-5.bp480-4.bp768-12.large-4.columns
 								h1.main-links__title
 									span.main-links__title__text
 										span.main-links__title__small Resources for
 										| Employees
-							.large-8.columns.main-links__link-box.main-links__link-box--employees
+							.small-7.bp480-8.bp768-12.large-8.columns.main-links__link-box.main-links__link-box--employees
 								ul.main-links__list
 									each item in site.data.mainlinks.employees
 										li.main-links__list-item
@@ -72,7 +72,7 @@ block content
 	section.row.main-section.main-faq
 		.small-12.columns
 			h1.main-section__title Frequently asked Questions
-		.large-push-1.large-5.columns
+		.large-push-1.large-5.columns(data-mh="main-faq")
 			.main-faq__top
 				h2.main-faq__title Job seekers
 				a.main-faq__see-all.btn.btn--with-right-arrow(href="#", title="See all") See all
@@ -89,7 +89,7 @@ block content
 					a(href="#").main-faq__list-item__question What should I write in a job advertisement?
 					a(href="#").main-faq__list-item__child-toggle
 						span.show-for-sr Show answer
-		.large-push-1.large-5.columns
+		.large-push-1.large-5.columns(data-mh="main-faq")
 			.main-faq__top
 				h2.main-faq__title Recruitments
 				a.main-faq__see-all.btn.btn--with-right-arrow(href="#", title="See all") See all
@@ -106,7 +106,7 @@ block content
 					a(href="#").main-faq__list-item__question Sharefarmer or employee?
 					a(href="#").main-faq__list-item__child-toggle
 						span.show-for-sr Show answer
-		.large-push-1.large-5.columns
+		.large-push-1.large-5.columns(data-mh="main-faq")
 			.main-faq__top
 				h2.main-faq__title Farm policies and systems
 				a.main-faq__see-all.btn.btn--with-right-arrow(href="#", title="See all") See all
@@ -123,7 +123,7 @@ block content
 					a(href="#").main-faq__list-item__question What should I write in a job advertisement?
 					a(href="#").main-faq__list-item__child-toggle
 						span.show-for-sr Show answer
-		.large-pull-1.large-5.columns
+		.large-push-1.large-5.columns.end(data-mh="main-faq")
 			.main-faq__top
 				h2.main-faq__title Engagement and Reward
 				a.main-faq__see-all.btn.btn--with-right-arrow(href="#", title="See all") See all
