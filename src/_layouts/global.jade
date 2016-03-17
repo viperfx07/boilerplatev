@@ -29,7 +29,7 @@ html(class='no-js', lang='en')
 		meta(content="on",http-equiv="cleartype")
 		//-#
 
-		title Boilerplate V
+		title People in Agriculture
 		
 		link(rel='icon', type="image/x-icon", href='/favicon.ico')
 		link(rel='apple-touch-icon', href="assets/apple-touch-icon.png")
@@ -38,12 +38,13 @@ html(class='no-js', lang='en')
 	body
 		header.header
 			block header
-		
+				include ../_partials/header
 		main
 			block content
 
 		footer.footer
 			block footer
+				include ../_partials/footer
 		
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.js")
 		script(src="//cdn.polyfill.io/v2/polyfill.min.js")

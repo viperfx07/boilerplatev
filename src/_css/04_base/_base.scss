@@ -27,6 +27,18 @@ body{
   	background-color: #ffffff;
 }
 
+h1, h2, h3, h4{
+	@include slabo;
+}
+
+p{
+	@include open-sans;
+}
+
+strong{
+	@include open-sans-semibold;
+}
+
 a{
 	@include m-color('blue');
 }
