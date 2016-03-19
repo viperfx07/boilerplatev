@@ -25,18 +25,28 @@
 	
 	// {{footer-carousel}}
 	&-carousel{
+		opacity: 0.3;
+		transition: opacity 0.3s;
 		
 		// {{footer-carousel__container}}
 		&-container{
 			margin: rem-calc(50) auto 0 auto;
 			padding-left: rem-calc(50);
 			padding-right: rem-calc(50);
-			max-width: rem-calc(1152);
+			max-width: rem-calc(1300);
 		}
 		
 		// {{footer-carousel__item}}
 		&__item{
-			display: block;
+			display: inline-block;
+
+			.footer-carousel.js-active &{
+				display: block;
+			}
+		}
+
+		&.slick-initialized{
+			opacity: 1;
 		}
 	}
 
@@ -77,8 +87,14 @@
 	// {{footer-tag}}
 	&-tag{
 		@include slabo;
-		font-size: rem-calc(30);
 		text-align: center;
+		font-size: rem-calc(24);
+		
+		@include mq(medium){
+			font-size: rem-calc(30);	
+		}
+		
+		
 	}
 
 	// {{footer-dev}}
@@ -190,15 +206,15 @@
 			@include absolute-center;
 			color: inherit;
 			font-size: rem-calc(15);
+			position: relative;
 			display: block;
-
-			&:before{
-				@include m-sprite(big-arrow-top);
-				content: '';
+			
+			.v-icon{
+				font-size: rem-calc(30);
 				display: block;
-				width: 23px;
-				height: 14px;
-				margin: 0 auto rem-calc(8px) auto;
+				// position: absolute;
+				width: 100%;
+				// top: 0;
 			}
 		}
 	}

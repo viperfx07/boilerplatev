@@ -127,45 +127,69 @@ $icon-list: (
 
   daylight: "\EA05",
 
-  eggs: "\EA06",
+  dot-arrow-down: "\EA06",
 
-  facebook-official: "\EA07",
+  dot-arrow-left: "\EA07",
 
-  facebook: "\EA08",
+  dot-arrow-right: "\EA08",
 
-  fish: "\EA09",
+  dot-arrow-up: "\EA09",
 
-  grain: "\EA0A",
+  dot-plus: "\EA0A",
 
-  grapes: "\EA0B",
+  download: "\EA0B",
 
-  home: "\EA0C",
+  eggs: "\EA0C",
 
-  instagram: "\EA0D",
+  facebook-official: "\EA0D",
 
-  linkedin-square: "\EA0E",
+  facebook: "\EA0E",
 
-  linkedin: "\EA0F",
+  fish: "\EA0F",
 
-  livestock: "\EA10",
+  flag: "\EA10",
 
-  pork: "\EA11",
+  grain: "\EA11",
 
-  search: "\EA12",
+  grapes: "\EA12",
 
-  tumblr: "\EA13",
+  home: "\EA13",
 
-  twitter: "\EA14",
+  instagram: "\EA14",
 
-  woman: "\EA15",
+  justice: "\EA15",
 
-  wool: "\EA16",
+  linkedin-square: "\EA16",
 
-  youtube-square: "\EA17",
+  linkedin: "\EA17",
 
-  youtube: "\EA18",
+  livestock: "\EA18",
 
-  youtube2: "\EA19",
+  payment: "\EA19",
+
+  pdf: "\EA1A",
+
+  pork: "\EA1B",
+
+  printer: "\EA1C",
+
+  search: "\EA1D",
+
+  tips: "\EA1E",
+
+  tumblr: "\EA1F",
+
+  twitter: "\EA20",
+
+  woman: "\EA21",
+
+  wool: "\EA22",
+
+  youtube-square: "\EA23",
+
+  youtube: "\EA24",
+
+  youtube2: "\EA25",
 
 );
 
@@ -176,7 +200,7 @@ $icon-list: (
 }
 
 //usually this use on pseudo element
-@mixin m-use-icon($iconName){
+@mixin m-icon($iconName){
   @extend .v-icon;
   content: f-icon($iconName);
 }

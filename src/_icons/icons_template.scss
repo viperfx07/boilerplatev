@@ -128,7 +128,7 @@ $icon-list: (
 }
 
 //usually this use on pseudo element
-@mixin m-use-icon($iconName){
+@mixin m-icon($iconName){
   @extend .<%= className %>;
   content: f-icon($iconName);
 }

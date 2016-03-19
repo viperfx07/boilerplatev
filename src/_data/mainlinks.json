@@ -1,15 +1,15 @@
 {
 	"employers":[
-		{"title": "How do I employ someone?", "href": "#"},
-		{"title": "What are my responsibilities?", "href": "#"},
-		{"title": "Where do I find employees?", "href": "#"},
-		{"title": "How much do I pay someone?", "href": "#"}
+		{"title": "How do I employ someone?", "href": "/standard.html"},
+		{"title": "What are my responsibilities?", "href": "/standard.html"},
+		{"title": "Where do I find employees?", "href": "/standard.html"},
+		{"title": "How much do I pay someone?", "href": "/standard.html"}
 	],
 
 	"employees":[
-		{"title": "Why work in Agriculture?", "href": "#"},
-		{"title": "How do I find a job?", "href": "#"},
-		{"title": "How much do I get paid?", "href": "#"},
-		{"title": "What industry should I get into?", "href": "#"}
+		{"title": "Why work in Agriculture?", "href": "/standard.html"},
+		{"title": "How do I find a job?", "href": "/standard.html"},
+		{"title": "How much do I get paid?", "href": "/standard.html"},
+		{"title": "What industry should I get into?", "href": "/standard.html"}
 	]
 }

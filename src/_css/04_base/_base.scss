@@ -21,14 +21,27 @@ html{
 	line-height: 1.5;
 }
 
+*{
+	.wf-loading &:not(.v-icon){
+		font-family: Arial, sans-serif !important;
+  	}
+}
 body{
-	font-family: Arial, sans-serif;
+	@include open-sans;
 	@include m-color('black');
   	background-color: #ffffff;
 }
 
 h1, h2, h3, h4{
 	@include slabo;
+}
+
+h1{
+	font-size: rem-calc(34);
+}
+
+h2{
+	font-size: rem-calc(24);
 }
 
 p{

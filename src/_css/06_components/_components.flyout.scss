@@ -1,6 +1,6 @@
 .flyout{
+	@include m-zindex(flyout);
 	max-width: rem-calc(1275);
-	z-index: 10;
 	display: none;
 
 	@include mq(large){
@@ -13,13 +13,13 @@
 	
 	// {{flyout__content}}
 	&__content{
-
+		@include m-zindex('flyout__content');
 		position: absolute;
 		top:0;
-		z-index: 1;
-		border-bottom: 11px solid rgba(f-color('black'), 0.2);
+		border-bottom: 11px solid rgba(f-color('black'), 0.1);
+
 		@include mq(large){
-			border: 11px solid rgba(f-color('black'), 0.2);
+			border: 11px solid rgba(f-color('black'), 0.1);
 			border-top: 0;
 			border-bottom-left-radius: 6px;
 			border-bottom-right-radius: 6px;
@@ -46,16 +46,27 @@
 			background-color: rgba(f-color('black'), 0.5);
 		}
 		
+		// {{flyout__top-left}}
 		&-left{
 			display: table-cell;
 			width: calc(100% - 70px);
-			text-align: center;
 			vertical-align: middle;
-			padding: rem-calc(25);
+			padding: rem-calc(16);
+			font-size: rem-calc(12);
+			text-align: left;
+
+			@include mq(bp768){
+				text-align: center;
+				font-size: rem-calc(16);
+				padding: rem-calc(25);	
+			}
 		}
+
+		// {{flyout__top-right}}
 		&-right{
 			display: table-cell;
 			vertical-align: middle;
+			width: rem-calc(70);
 			@include m-bgcolor('black');
 		}
 	}
@@ -73,8 +84,7 @@
 	// {{flyout-close-btn}}
 	&-close-btn{
 		color: #fff;
-		display: inline-block;
-		width: rem-calc(70);
+		display: block;
 		font-size: rem-calc(10);
 		position: relative;
 		padding-top: rem-calc(24);
@@ -106,16 +116,51 @@
 
 	// {{flyout-toggle}}
 	&-toggle{
-		float: left;
-		display: inline-block;
-		@include m-sprite(toggle-open);
-		width: 25px;
-		height: 25px;
-		vertical-align: bottom;
+		@include m-bgcolor('light-grey');
+		width: 2/12 * 100%;
+		max-width: rem-calc(50);
+		float: none;
+		height: 50px;
+	    top: 8px;
+	    bottom: 0;
+	    text-align: center;
+	    display: block;
+	    border-top-left-radius: 6px;
+	    border-bottom-left-radius: 6px;
+		position: absolute;
+		right: 0;
 		margin-left: rem-calc(15);
-		&.is-open, &.js-open{
-			@include m-sprite(toggle-close);
+
+		@include mq(bp768){
+			width: 25px;
+			height: 25px;
+			@include m-sprite(toggle-open);
+			display: inline-block;
+			vertical-align: bottom;
+			border-radius: 0;
+			bottom: 6px;
+			top: auto;			
 		}
+
+		&:before{
+			@include m-sprite('black-arrow-down');
+			content: '';
+		    display: block;
+		    margin: rem-calc( (50 - 11) / 2) auto 0;
+		    width: 11px;
+		    height: 11px;
+		    @include mq(bp768){
+		    	content: normal;
+		    }
+		}
+
+		&.is-open, &.js-open{
+			@include mq(bp768){
+				@include m-sprite(toggle-close);
+			}
+		}
+
+
 	}
 
 	
@@ -123,10 +168,15 @@
 	&__menus{
 		@include clearfix;
 		@include m-bgcolor('dark-grey');
+		-js-display: flex;
+		display: flex;
+		flex-wrap: wrap;
 	}
 
 	// {{flyout-menu}}
 	&-menu{
+		flex-grow: 1;
+
 		@include m-color('dark-grey');
 		width: grid-column(1 of 7);
 		display: none;
@@ -136,20 +186,20 @@
 		padding: rem-calc(25) 0;
 		border-right: 1px solid #eef0f1;
 		border-top: 1px solid #eef0f1;
-
+	
 		&:nth-child(-n+5){
 			width: 50%;
 			display: block;
-			@include mq(large){
+			@include mq(bp768){
 				width: grid-column(1 of 7);
 			}
 		}
 		
-		@include mq(large){
+		@include mq(bp768){
 			display: block;
 			@for $i from 4 to 7{
-				&:nth-last-child(#{$i}):first-child, &:nth-last-child(#{$i}):first-child ~ &,
-				&:nth-last-child(#{$i* 2}):first-child, &:nth-last-child(#{$i * 2}):first-child ~ &{
+				&:nth-last-child(#{($i + 1)}):first-child, &:nth-last-child(#{$i + 1}):first-child ~ &,
+				&:nth-last-child(#{($i * 2) + 1}):first-child, &:nth-last-child(#{($i * 2)+ 1}):first-child ~ &{
 					width: grid-column(1 of $i);
 				}
 			}
@@ -159,7 +209,16 @@
 		&-text{
 			@include open-sans;	
 			font-size: rem-calc(16);
-			
+			@include mq(small only){
+				font-size: rem-calc(12);
+			}
+
+			@include mq(medium down){
+				float: right;
+				width: 50%;
+				text-align: left;
+			}
+
 			.is-active &{
 				display: none;
 			}
@@ -177,6 +236,15 @@
 		&-name{
 			@include slabo;
 			font-size: rem-calc(30);
+			@include mq(bp768 down){
+				font-size: rem-calc(20);
+			}
+
+			@include mq(medium down){
+				float: right;
+				width: 50%;
+				text-align: left;
+			}
 		}
 
 		&:hover, &:focus, &.active, &.is-active{
@@ -207,10 +275,17 @@
 		&__icon{
 			width: 100%;
 			transition: all 0.3s;
-			font-size: rem-calc(30);
+			font-size: rem-calc(40);
+			line-height: 1;
 
-			@include mq(bp768){
-				font-size: rem-calc(40);
+			@include mq(medium down){
+				float: left;
+				width: 50%;
+				text-align: center;
+			}
+
+			@include mq(bp480){
+				font-size: rem-calc(50);
 			}
 
 			@include mq(xlarge){
@@ -223,6 +298,12 @@
 			
 			.v-icon{
 				vertical-align: middle;
+
+				&-pork{
+					@include mq(small only){
+						font-size: rem-calc(30);
+					}
+				}
 			}
 
 		}
@@ -231,17 +312,26 @@
 		&--other{
 			@include m-bgcolor('dark-grey');
 			color: #ffffff;
-			display: block;
 			width: 50%;
 			border-right: 0;
+		    -js-display: flex;
+		    display: flex;
+		    align-items: center;
+    		justify-content: center;
 			
 			&:hover, &:focus{
 				color: #ffffff;
 			}
 			
-			@include mq(large){
+			.flyout-menu-name{
+				float: none;
+				text-align: center;
+			}
+			
+			@include mq(bp768){
 				display: none;
 			}
+
 		}
 	
 	}

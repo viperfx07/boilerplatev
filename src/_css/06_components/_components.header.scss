@@ -6,13 +6,35 @@
 			padding-left: rem-calc(16);
 			padding-right: rem-calc(16);
 			padding-top: rem-calc(24);
-			padding-bottom: rem-calc(24);
+		}
+		
+		// {{header__top__row}}
+		&__row{
+			@extend .standard-w1170;
+			@include m-zindex(header__top__row);
+		}
+
+		&__shadow{
+			@include m-zindex(header__top__shadow);
+			max-width: rem-calc(1366);
+		    margin: auto;
+		    height: 10px;
+		    position: relative;
+		    background-color: rgba(f-color('black'),0.1);
+
+		    @include mq(large){
+		    	margin-top: -2px; //the height of the active header__resource-link
+		    }
 		}
 
 		// {{header__top-left}}
 		&-left{
 			padding-top: rem-calc(8);
-			padding-bottom: rem-calc(8);
+			padding-bottom: rem-calc(16);
+
+			@include mq(medium){
+				padding-bottom: rem-calc(8);				
+			}
 		}
 		
 		// {{header__top-right}}
@@ -40,8 +62,14 @@
 	&__logo{
 		display: inline-block;
 		vertical-align: bottom;
-		@include mq(xlarge){
-			margin-left: rem-calc(90);
+		max-width: rem-calc(80);
+
+		@include mq(bp480){
+			max-width: rem-calc(100);
+		}
+
+		@include mq(medium){
+			max-width: none;
 		}
 
 		&-divider{
@@ -65,7 +93,9 @@
 		}
 
 		img{
-			max-width: 100px;
+			@include mq(bp768){
+				max-width: 100px;	
+			}
 
 			@include mq(large){
 				max-width: 100%;
@@ -80,16 +110,19 @@
 		vertical-align: bottom;
 		padding-bottom: rem-calc(2);
 		padding-right: rem-calc(35);
-		position: relative;
+
+		@include mq(bp768){
+			position: relative;	
+		}
 
 		// {{header__tag-top}}
 		&-top{
 			@include open-sans;
 			font-weight: 600;
-			font-size: rem-calc(14);
+			font-size: rem-calc(12);
 			display: block;
 
-			@include mq(large){
+			@include mq(bp480){
 				font-size: rem-calc(16);
 			}
 		}
@@ -97,58 +130,43 @@
 		// {{header__tag-bottom}}
 		&-bottom{
 			@include slabo;
-			font-size: rem-calc(24);
+			font-size: rem-calc(18);
 			display: block;
 			line-height: 1;
 			font-weight: 400;
+			@include mq(bp480){
+				font-size: rem-calc(24);
+			}
 
 			@include mq(large){
 				font-size: rem-calc(30);
-			}
-		}
-		
-		// {{header__tag__flyout-toggle}}
-		&__flyout-toggle{
-			position: absolute;
-			bottom: 6px;
-			right: 0;
-			float: none;
-		}
-	}
-	
-	// {{header__resource-column}}
-	&__resource-column{
-		min-height: rem-calc(70);
-
-		// {{header__resource-column--employers}}
-		&--employers{
-			@include m-bgcolor('employers');
-			@include mq(large){
-				background-color: transparent;
-			}
-		}
-		
-		// {{header__resource-column--employees}}
-		&--employees{
-			@include m-bgcolor('employees');
-			@include mq(large){
-				background-color: transparent;
 			}
 		}
 	}
 	
 	// {{header__resource-link}}
 	&__resource-link{
-		
+		min-height: rem-calc(70);
 		color: #ffffff;
 		padding-top: rem-calc(8);
 		padding-bottom: rem-calc(8);
 		display: block;
 		
+		
 		@include mq(large){
+			@include m-color('dark-grey');
 			@include clearfix;
 			float: left;
-			@include m-color('dark-grey');	
+			border-bottom: 2px solid transparent;
+		}
+
+		&:after{
+			width: calc(100% + 30px);
+		    height: 2px;
+		    position: relative;
+		    bottom: -10px;
+		    z-index: 1;
+		    left: rem-calc(-15);
 		}
 
 		// {{header__resource-link__top}}
@@ -167,14 +185,14 @@
 		// {{header__resource-link__bottom}}
 		&-bottom{
 			@include slabo;
-			font-size: rem-calc(28);
+			font-size: rem-calc(24);
 			font-weight: 400;
 			display: block;
-			line-height: 1;
 			color: #ffffff;
 
 			@include mq(large){
 				font-size: rem-calc(38);
+				line-height: 1;
 			}
 			
 			// {{header__resource-link--employers}}
@@ -191,16 +209,40 @@
 				}
 			}
 		}
-
+		
+		// {{header__resource-link--employees}}
 		&--employers{
-		}
+			@include m-bgcolor('employers');
+			@include mq(large){
+				background-color: transparent;
 
+				&.active{
+					&:after{
+						@include m-bgcolor('employers');
+					}
+				}
+			}
+		}
+		
+		// {{header__resource-link--employees}}
 		&--employees{
+			@include m-bgcolor('employees');
+			@include mq(large){
+				background-color: transparent;
+
+				&.active{
+					&:after{
+						@include m-bgcolor('employees');
+					}
+				}
+			}
 		}
 		
 		// {{header__resource-link + header__resource-link}}
 		& + & {
-			margin-left: 20px;
+			@include mq(large){
+				margin-left: 20px;	
+			}
 		}
 	}
 

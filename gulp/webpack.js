@@ -16,6 +16,9 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync, di
             //filename of the main app file
             filename: config.entries.js
         },
+        externals:{
+            "jquery": "jQuery"
+        },
         module: {
             loaders: [
                 { test: /\.js$/, exclude: /(node_modules|bower_components)/, loader: "babel-loader"},

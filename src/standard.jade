@@ -1,79 +1,208 @@
 extends _layouts/global
 
-block header
-	include _partials/header
+block childConfig
+	- var isEmployersActive = true
+
 block content
-	.row
-		.columns.small-12
-			.breadcrumb
-	.row
-		.columns.large-4
-			.standard__side
-		.columns.large-8
-			article.standard
-				.standard__icon
+	.standard.standard--employers
+		.row.standard-row-breadcrumb.show-for-large
+			.columns.small-12
+				nav.breadcrumb
+					ul
+						li
+							a(href="/")
+								i.v-icon.v-icon-home
+								| Home
+						li
+							a(href="/standard.html", title="Resources for Employers") Resources for Employers
+						li
+							a(href="/standard.html", title="Secondary Level of navigation") Secondary Level of navigation
+						li
+							a(href="/standard.html", title="Tertiary Level of navigation") Tertiary Level of navigation
+		.row.standard-row-main
+			.columns.large-4.show-for-large
+				.standard__siderow.standard__sidenav
+					ul
+						each item in site.data.standardsidenav
+							li(class=(item.isActive) ? 'active' : '')
+								.standard__sidenav-indicator
+								.standard__sidenav-links
+									a(href="#")=item.title
+									if item.child
+										ul
+											each item2 in item.child
+												li
+													a(href="#")=item2.title
+				.standard__siderow.standard__sidesponsor
+					small.standard__sidesponsor__text Proudly supported by
+					.standard__sidesponsor__img
+						img(src="assets/img/dairyaustralialogo.png", alt="Dairy Australia")
+				.standard__siderow.standard__sidetools
+					ul.standard__sidetools__list
+						li.standard__sidetools__list-item
+							a(href="#")
+								.v-icon.v-icon-printer
+								| Print
+						li.standard__sidetools__list-item
+							a(href="#")
+								.v-icon.v-icon-pdf
+								| Download
 
-				h1 How much do I pay someone?
+					.standard__sidetools__related.standard__related.standard__related--side
+						strong.standard__related-title Related topics
+						ul.standard__related__list
+							li.standard__related__list-item
+								a(href="#") Policies
+							li.standard__related__list-item
+								a(href="#") Employer
+							li.standard__related__list-item
+								a(href="#") Climate
+							li.standard__related__list-item
+								a(href="#") Infrastructure
+							li.standard__related__list-item
+								a(href="#") Fees
+							li.standard__related__list-item
+								a(href="#") Farming
+							li.standard__related__list-item
+								a(href="#") Networks
+							li.standard__related__list-item
+								a(href="#") Policies
 
-				h2 Why take a people approach on your farm?
+			.columns.large-8
+				article.standard__article
+					h1.standard__heading How much do I pay someone?
+					
+					.standard__img.standard__img--with-shadow
+						img(src="assets/img/standard1.png", alt="")
+					
+					h2 Why take a people approach on your farm?
 
-				p.standard__abstract Every dairy farm involves people. From single person managers or owners to large corporate farms, the ability to effectively engage people to operate the farm business is relevant. 
+					p.standard__abstract Every dairy farm involves people. From single person managers or owners to large corporate farms, the ability to effectively engage people to operate the farm business is relevant. 
 
-				p A realistic goal for any farm business should be to ensure that the business is not constrained by people issues.
+					p A realistic goal for any farm business should be to ensure that the business is not constrained by people issues.
 
-				p The trends in the industry are increasing herd sizes and more people being employed. If the industry is to attract and retain good people it must be competitive with other industries. Although remuneration plays a part, there are other factors that make a business attractive to work in.
+					p The trends in the industry are increasing herd sizes and more people being employed. If the industry is to attract and retain good people it must be competitive with other industries. Although remuneration plays a part, there are other factors that make a business attractive to work in.
 
-				p Visit the <a href="#">real stories</a> section to find out how other farmers manage their people issues and get some ideas you can use on your own farm.
-				
-				h2 Why take a people approach on your farm?
+					p Visit the <a href="#">real stories</a> section to find out how other farmers manage their people issues and get some ideas you can use on your own farm.
+					
+					h2 Why take a people approach on your farm?
 
-				p Every dairy farm involves people. From single person managers or owners to large corporate farms, the ability to effectively engage people to operate the farm business is relevant. 
+					p Every dairy farm involves people. From single person managers or owners to large corporate farms, the ability to effectively engage people to operate the farm business is relevant. 
 
-				p A realistic goal for any farm business should be to ensure that the business is not constrained by people issues.
+					p A realistic goal for any farm business should be to ensure that the business is not constrained by people issues.
 
-				p The trends in the industry are increasing herd sizes and more people being employed. If the industry is to attract and retain good people it must be competitive with other industries. Although remuneration plays a part, there are other factors that make a business attractive to work in.
+					p The trends in the industry are increasing herd sizes and more people being employed. If the industry is to attract and retain good people it must be competitive with other industries. Although remuneration plays a part, there are other factors that make a business attractive to work in.
 
-				p Visit the <a href="#">real stories</a> section to find out how other farmers manage their people issues and get some ideas you can use on your own farm.
-				
-				.standard-box.standard-box--green
-					.standard-box__left
-						i.v-icon
-					.standard-box__content
-						strong.standard-box__title Best Practices
-						p We have two tools to help you analyse farm performance around people (productivity, systems, roles and responsibilities, working conditions, retention). 
+					p Visit the <a href="#">real stories</a> section to find out how other farmers manage their people issues and get some ideas you can use on your own farm.
+					
+					.standard__standard-box.standard-box.standard-box--green
+						.standard-box__left
+							i.v-icon.v-icon-tips
+						.standard-box__content
+							strong.standard-box__title Best Practices
+							p We have two tools to help you analyse farm performance around people (productivity, systems, roles and responsibilities, working conditions, retention). 
 
-						p The People Snapshot provides an easy to use self-assessment tool to help identify areas in which you are doing well and others areas that need your attention. Links to relevant resources will help you get started on your path to getting the best from the people on your farm. People Basics provides the essential templates for employers.
+							p The People Snapshot provides an easy to use self-assessment tool to help identify areas in which you are doing well and others areas that need your attention. Links to relevant resources will help you get started on your path to getting the best from the people on your farm. People Basics provides the essential templates for employers.
 
-				h2 Why take a people approach on your farm?
+					h2 Why take a people approach on your farm?
 
-				p Every dairy farm involves people. From single person managers or owners to large corporate farms, the ability to effectively engage people to operate the farm business is relevant. 
+					p Every dairy farm involves people. From single person managers or owners to large corporate farms, the ability to effectively engage people to operate the farm business is relevant. 
 
-				p A realistic goal for any farm business should be to ensure that the business is not constrained by people issues.
+					p A realistic goal for any farm business should be to ensure that the business is not constrained by people issues.
 
-				p The trends in the industry are increasing herd sizes and more people being employed. If the industry is to attract and retain good people it must be competitive with other industries. Although remuneration plays a part, there are other factors that make a business attractive to work in.
+					p The trends in the industry are increasing herd sizes and more people being employed. If the industry is to attract and retain good people it must be competitive with other industries. Although remuneration plays a part, there are other factors that make a business attractive to work in.
 
-				p Visit the <a href="#">real stories</a> section to find out how other farmers manage their people issues and get some ideas you can use on your own farm.
+					p Visit the <a href="#">real stories</a> section to find out how other farmers manage their people issues and get some ideas you can use on your own farm.
 
-				.standard-box
-					.standard-box__left
-						i.v-icon
-					.standard-box__content
-						strong.standard-box__title By Law
-						p We have two tools to help you analyse farm performance around people (productivity, systems, roles and responsibilities, working conditions, retention). 
+					.standard__standard-box.standard-box
+						.standard-box__left
+							i.v-icon.v-icon-justice
+						.standard-box__content
+							strong.standard-box__title By Law
+							p We have two tools to help you analyse farm performance around people (productivity, systems, roles and responsibilities, working conditions, retention). 
 
-						p The People Snapshot provides an easy to use self-assessment tool to help identify areas in which you are doing well and others areas that need your attention. Links to relevant resources will help you get started on your path to getting the best from the people on your farm. People Basics provides the essential templates for employers.
+							p The People Snapshot provides an easy to use self-assessment tool to help identify areas in which you are doing well and others areas that need your attention. Links to relevant resources will help you get started on your path to getting the best from the people on your farm. People Basics provides the essential templates for employers.
 
-				p The trends in the industry are increasing herd sizes and more people being employed. If the industry is to attract and retain good people it must be competitive with other industries. Although remuneration plays a part, there are other factors that make a business attractive to work in.
+					p The trends in the industry are increasing herd sizes and more people being employed. If the industry is to attract and retain good people it must be competitive with other industries. Although remuneration plays a part, there are other factors that make a business attractive to work in.
 
-				p Visit the <a href="#">real stories</a> section to find out how other farmers manage their people issues and get some ideas you can use on your own farm.
+					p Visit the <a href="#">real stories</a> section to find out how other farmers manage their people issues and get some ideas you can use on your own farm.
 
-				.standard-box.standard-box--red
-					.standard-box__left
-						i.v-icon
-					.standard-box__content
-						strong.standard-box__title Downloads
-						p We have two tools to help you analyse farm performance around people (productivity, systems, roles and responsibilities, working conditions, retention).<br/><a href="#">PDF 2.8mb</a>
-						p We have two tools to help you analyse farm performance around people (productivity, systems, roles and responsibilities, working conditions, retention).<br/><a href="#">PDF 2.8mb</a>
-						p We have two tools to help you analyse farm performance around people (productivity, systems, roles and responsibilities, working conditions, retention).<br/><a href="#">PDF 2.8mb</a>
+					.standard__standard-box.standard-box.standard-box--red
+						.standard-box__left
+							i.v-icon.v-icon-flag
+						.standard-box__content
+							strong.standard-box__title Common issues to be aware of.
+							p We have two tools to help you analyse farm performance around people (productivity, systems, roles and responsibilities, working conditions, retention). 
 
-				p The trends in the industry are increasing herd sizes and more people being employed. If the industry is to attract and retain good people it must be competitive with other industries. Although remuneration plays a part, there are other factors that make a business attractive to work in.
+							p The People Snapshot provides an easy to use self-assessment tool to help identify areas in which you are doing well and others areas that need your attention. Links to relevant resources will help you get started on your path to getting the best from the people on your farm. People Basics provides the essential templates for employers.
+
+					p The trends in the industry are increasing herd sizes and more people being employed. If the industry is to attract and retain good people it must be competitive with other industries. Although remuneration plays a part, there are other factors that make a business attractive to work in.
+
+					p Visit the <a href="#">real stories</a> section to find out how other farmers manage their people issues and get some ideas you can use on your own farm.
+
+					.standard__standard-box.standard-box.standard-box--blue
+						.standard-box__left
+							i.v-icon.v-icon-download
+						.standard-box__content
+							strong.standard-box__title Downloads
+							p We have two tools to help you analyse farm performance around people (productivity, systems, roles and responsibilities, working conditions, retention).<br/><a href="#">PDF 2.8mb</a>
+							p We have two tools to help you analyse farm performance around people (productivity, systems, roles and responsibilities, working conditions, retention).<br/><a href="#">PDF 2.8mb</a>
+							p We have two tools to help you analyse farm performance around people (productivity, systems, roles and responsibilities, working conditions, retention).<br/><a href="#">PDF 2.8mb</a>
+
+					p The trends in the industry are increasing herd sizes and more people being employed. If the industry is to attract and retain good people it must be competitive with other industries. Although remuneration plays a part, there are other factors that make a business attractive to work in.
+
+				.standard__relevant
+					.row
+						.bp768-3.columns
+							strong.standard__relevant-title Also relevant
+						.bp768-9.columns
+							ul.standard__relevant__list
+								li.standard__relevant__list-item
+									a(href="#") Am I ready to employ someone?
+								li.standard__relevant__list-item
+									a(href="#") How much do I pay someone?
+								li.standard__relevant__list-item
+									a(href="#") How do I employ someone?
+								li.standard__relevant__list-item
+									a(href="#") Where do I find employees?
+
+				.standard__related.show-for-small.hide-for-large
+					strong.standard__related-title Related topics
+					ul.standard__related__list
+						li.standard__related__list-item
+							a(href="#") Policies
+						li.standard__related__list-item
+							a(href="#") Employer
+						li.standard__related__list-item
+							a(href="#") Climate
+						li.standard__related__list-item
+							a(href="#") Infrastructure
+						li.standard__related__list-item
+							a(href="#") Fees
+						li.standard__related__list-item
+							a(href="#") Farming
+						li.standard__related__list-item
+							a(href="#") Networks
+						li.standard__related__list-item
+							a(href="#") Policies
+		.row.standard__footer.collapse
+			.columns.bp768-6.xlarge-4.standard__footer-col(data-mh="fc")
+				.standard__footer__img
+					img(src="assets/img/footer1.jpg", alt="")
+			.columns.bp768-6.xlarge-8.standard__footer-col(data-mh="fc")
+				.standard__footer__content
+					.row
+						.columns.small-12
+							strong.standard__footer__title From our success stories
+					.row
+						.columns.xlarge-6
+							.standard__footer__quote
+								blockquote My day starts at 6am when I'm done I get to sit with a beer looking out my achievement
+								strong.standard__footer__quote-title Claire
+								small.standard__footer__quote-sub Dairy farmer in TAS
+
+						.columns.xlarge-6
+							.standard__footer__content-sub
+								p Each sucess story can have a quote and a aleading paragraph to caputre interest and be used around the site, in such places like this. It only has to be a few sentances long but really suck people into the story.
+
+								a.standard__footer__standard-btn.standard-btn(href="#", title="Read Claire's Story") Read Claire's Story

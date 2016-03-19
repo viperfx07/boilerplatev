@@ -5,6 +5,11 @@
 		display: block;
 		min-height: rem-calc(70);
 		width: 100%;
+		@include mq(small only){
+			width: auto;
+			margin-left: rem-calc(-5);
+			margin-right: rem-calc(-5);
+		}
 
 		@include mq(large){
 			display: none;
@@ -58,15 +63,18 @@
 		transition: all 0.5s ease-out;
 
 		&.js-open{
+			@include m-zindex('mobilemenu');
 			transform: none;
 			opacity: 1;
-			z-index: 11;
 			visibility: visible;
 		}
 
 		// {{mobile-menu-left}}
 		&-left{
-
+			max-width: calc( 100% - 49px);
+			@include mq(medium){
+				max-width: calc( 100% - 82px);
+			}
 			// {{mobile-menu-left__title}}
 			&__title{
 				padding-top: rem-calc(16);
@@ -86,7 +94,10 @@
 			}
 			ul{
 				margin: 0;
-				list-style-type: none;	
+				list-style-type: none;
+				@include mq(small only){
+					font-size: rem-calc(14);
+				}
 			}
 
 			li{
@@ -127,23 +138,34 @@
 			top: 0;
 			bottom: 0;
 			right: 0;
-			width: rem-calc(83);
+			width: rem-calc(50);
+
+			@include mq(medium){
+				width: rem-calc(83);				
+			}
 			
 			a{
 				@include open-sans-semibold;
-				font-size: rem-calc(20);
+				font-size: rem-calc(14);
 				color: #ffffff;
 				display: block;
 				text-align: center;
 				width: 100%;
 				margin-top: rem-calc(13);
 
+				@include mq(medium){
+					font-size: rem-calc(20);
+				}
+
 				& + a, & + div{
 					margin-top: rem-calc(40);
 				}
 				
 				.v-icon{
-					font-size: rem-calc(50);
+					font-size: rem-calc(30);
+					@include mq(medium){
+						font-size: rem-calc(50);
+					}
 				}
 				.v-icon-home{
 					& + .mobile-menu-right__text{
@@ -160,7 +182,10 @@
 				width: 100%;
 
 				.v-icon{
-					font-size: rem-calc(50);
+					font-size: rem-calc(30);
+					@include mq(medium){
+						font-size: rem-calc(50);	
+					}
 				}
 			}
 		}

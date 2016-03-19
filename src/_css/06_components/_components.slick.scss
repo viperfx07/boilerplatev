@@ -1,7 +1,6 @@
 .slick{
 	&-prev, &-next{
 		&:before{
-			content: '';
 			display: block;
 			width: 10px;
 			height: 17px;
@@ -18,13 +17,17 @@
 	
 	&-prev{
 		&:before{
-			@include m-sprite(slider-left);
+			@include m-icon('dot-arrow-left');
 		}
 	}
 
 	&-next{
 		&:before{
-			@include m-sprite(slider-right);
+			@include m-icon('dot-arrow-right');
 		}
+	}
+
+	&-loading &-list{
+		background: #fff url("../img/ajax-loader.gif") center center no-repeat 
 	}
 }

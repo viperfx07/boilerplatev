@@ -8,12 +8,12 @@
 					span.flyout-close-btn__text CLOSE
 		.flyout__menus
 			each item in site.data.flyoutmenu
-				a(href="#", data-mh="flyout-menu").flyout-menu(class=(item.isActive)? "is-active" : "")
+				a(href="#").flyout-menu(class=(item.isActive)? "is-active" : "")
 					small.flyout-menu-text Focus on
 					small.flyout-menu-text.is-active Focusing on
 					.flyout-menu__icon
 						i(class="v-icon v-icon-"+item.icon)
 					strong.flyout-menu-name=item.title
 
-			a(href="#").flyout-menu.flyout-menu--other(data-mh="flyout-menu")
+			a(href="#").flyout-menu.flyout-menu--other
 					strong.flyout-menu-name Other

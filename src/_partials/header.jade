@@ -1,10 +1,10 @@
 include secondarymenu
 
 .header__top
-	.row
+	.row.header__top__row
 		.bp768-6.columns.header__top-left
 			.header__logo
-				a(href="#", title="Home")
+				a(href="/", title="Home")
 					img(src="assets/img/logo.png", alt="logo")
 			.header__logo-divider
 				img(src="assets/img/divider.svg", alt="divider")
@@ -16,14 +16,12 @@ include secondarymenu
 
 		.bp768-6.header__top-right.columns
 			.row.header__top-right__row
-				.small-5.large-4.columns.header__resource-column.header__resource-column--employers
-					a.header__resource-link.header__resource-link--employers(href="#")
-						small.header__resource-link-top Resources for
-						strong.header__resource-link-bottom.header__resource-link-bottom--employers Employers
-				.small-5.large-4.columns.header__resource-column.header__resource-column--employees
-					a.header__resource-link.header__resource-link--employees(href="#")
-						small.header__resource-link-top Guides for
-						strong.header__resource-link-bottom.header__resource-link-bottom--employees Employees
+				a.small-5.large-4.columns.header__resource-link.header__resource-link--employers(href="/standard.html", class=(isEmployersActive) ? "active" : "")
+					small.header__resource-link-top Resources for
+					strong.header__resource-link-bottom.header__resource-link-bottom--employers Employers
+				a.small-5.large-4.columns.header__resource-link.header__resource-link--employees(href="/standard.html")
+					small.header__resource-link-top Guides for
+					strong.header__resource-link-bottom.header__resource-link-bottom--employees Employees
 				.small-2.columns.mobile-toggle-column
 					a.mobile-toggle(href="#")
 						span.show-for-sr Open mobile menu
@@ -34,6 +32,7 @@ include secondarymenu
 
 				.header__search(data-mh="hrl")
 					.header__search-icon.v-icon.v-icon-search
-				
+	.header__top__shadow.show-for-large
+
 include flyoutmenu
 include mobilemenu
