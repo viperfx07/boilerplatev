@@ -1,3 +1,6 @@
 @mixin m-sprite($filename){
-	background: url('../_img/sprite/' + $filename + '.png');
+	$filePath:'../_img/sprite/' + $filename + '.png';
+	background: url($filePath);
+	width: width($filePath);
+	height: height($filePath);
 }

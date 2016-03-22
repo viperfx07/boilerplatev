@@ -5,6 +5,7 @@ import autoprefixer from 'autoprefixer';
 import gulpif from 'gulp-if';
 import atImport from 'postcss-import';
 import sprites from 'postcss-sprites';
+import assets from 'postcss-assets';
 import oldie from 'oldie';
 
 export default function(gulp, plugins, args, config, taskTarget, browserSync, dirs) {
@@ -18,7 +19,6 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync, di
       .pipe(plugins.sourcemaps.init())
       .pipe(plugins.cssGlobbing({	extensions: ['.scss']	}))
       .pipe(plugins.sass({
-        outputStyle: 'compressed',
         precision: 10,
         includePaths: [
           path.join(dirs.source, dirs.styles),
@@ -29,12 +29,12 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync, di
       .pipe(plugins.postcss([
           autoprefixer({browsers: ['last 2 version', '> 5%', 'safari 5', 'ios 6', 'android 4', 'ie 9']}),
           atImport(),
+          assets({
+            loadPaths: [path.join(dirs.source, dirs.images)]
+          }),
           sprites({
             stylesheetPath: dest, 
             spritePath: path.join(taskTarget, dirs.assets, 'img'), 
-            spritesmith: {
-              padding: 2 
-            }
           })
         ]))
       .pipe(plugins.rename(function(path) {

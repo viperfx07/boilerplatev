@@ -1,8 +1,0 @@
-// Add the sprite files in here
-$sprites: rounded-plus;
-
-@each $item in $sprites{
-	.sprite-#{$item} {
-		@include m-sprite($item);
-	}
-}
