@@ -1,7 +1,9 @@
 @import 'util/util';
 
+//max width for .row class
 $global-width: rem-calc(1366);
 
+//setting grid gutter
 $grid-column-gutter: (
   small: 30px,
   medium: 30px,
@@ -17,5 +19,6 @@ $breakpoints: (
   xxlarge: 1366px,
 );
 
+//The classes that will be generated
 $breakpoint-classes: (small bp480 medium bp768 large xlarge xxlarge);
 

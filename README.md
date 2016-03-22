@@ -1,10 +1,8 @@
 #BoilerplateV 
-An extensive HTML5 framework for building robust web sites utilising Jade, SCSS/PostCSS with Grunt.
+An extensive HTML5 framework for building robust web sites utilising Jade, SCSS/PostCSS with Gulp.
 
 Notes:
 * Since PostCSS is not mature enough, I have SCSS as a branch. Short story, I used PostCSS with [cssgrace](https://github.com/cssdream/cssgrace) plugin. It doesn't allow you to use inline-block in a nest. So, I chose not to use PostCSS for now but might use in the future, since PostCSS is blazingly fast.
-
-* Instead of using ruby Compass, I use [Compass mixins](https://github.com/Igosuki/compass-mixins) so I can still use the mixins / functions that are provided by Compass on my boilerplate.
 
 * gulp-sass though using node-sass options, can't make a sourcemap without gulp-sourcemaps
 * for browsersync, because using node-gyp, see INSTALLATION part on https://github.com/nodejs/node-gyp
@@ -14,16 +12,23 @@ Notes:
 
 
 ##Steps
-1. npm install -g bower bower-installer gulp (if you already have bower, bower-installer, and gulp, skip this)
-2. npm install
-3. gulp complete (if you have just downloaded the boilerplate for the first time)
-4. gulp (only if you have run gulp complete)
+1. npm install
+2. gulp (add --production for the production (minified) codes)
 
 ##HTML
-Use Jade brahhh.
+Jade
 
 ##CSS
-Use SCSS with the concept of BEM (Block Element Modifier) with ITCSS (Inverted Triangle CSS)
+SCSS with the concept of BEM (Block Element Modifier) with ITCSS (Inverted Triangle CSS)
+
+###Framework
+Foundation 6 (as the time of writing)
+
+Reason:
+* It can generate the breakpoint-wis classes for you with a single variable change
+* Smaller footprints
+* A11y (Accessibility) Friendly
+* [Other features](http://foundation.zurb.com/sites.html)
 
 ###ITCSS 
 (ref: https://speakerdeck.com/dafed/managing-css-projects-with-itcss)
@@ -59,13 +64,7 @@ The structure:
 
 1. All user-created functions must use f-*function-name* name convention, e.g. color: **f-color()** and put in **src/scss/02_tools/** folder and named **_tools.function.*function-name*.scss**.
 2. All user-created mixins need to use m-*mixin-name* name convention: **@include m-icon()**. and put in **src/scss/02_tools/** folder and named **_tools.mixin.*mixin-name*.scss**
-
-
-**Tools available:**
-
-1. [**Compass**](http://compass-style.org/reference/compass/) - also please check [Compass mixins](https://github.com/Igosuki/compass-mixins), which Compass version is used on the mixins.
-2. [**Breakpoint-sass**](http://breakpoint-sass.com/) - use **@include mq()** instead of **@include breakpoint()** for shorter references
-3. Custom mixins and functions. Check **src/scss/02_tools** folder. 
+3. Foundation mixins found [here](foundation.zurb.com/sites/docs/sass-mixins.html)
 
 ##JS: Vanilla JS + jQuery
 
@@ -75,7 +74,7 @@ It's up to you what to choose. Gulp is easy and awesome. Others, I don't really 
 
 ## Icons
 
-I'm using gulp-iconfont to generate fonts. The SCSS file is generated from the \_generic\_icon\_template.scss, which results in 03\_generic/\_generic.icons.scss. 
+I'm using gulp-iconfont to generate fonts. The SCSS file is generated from the src\_icons\icons_template.scss, which results in 03\_generic/\_generic.icons.scss. 
 
 The icons scss follows the Font-Awesome standard, so use it like when you use Font-Awesome, but instead of using .fa, you need to use .v-icon. 
 

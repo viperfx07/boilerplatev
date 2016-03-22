@@ -1,3 +1,4 @@
+// Shorthand for Foundation's breakpoint mixin
 @mixin mq($value){
 	@include breakpoint($value){
 		@content;

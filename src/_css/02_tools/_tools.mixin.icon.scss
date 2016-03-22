@@ -1,5 +1,5 @@
 //usually this use on pseudo element
-@mixin m-use-icon($iconName){
+@mixin m-icon($iconName){
 	@extend %icon;
 	content: f-icon($iconName);
 }
