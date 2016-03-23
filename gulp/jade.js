@@ -58,13 +58,6 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync, di
         }
       }
     }))
-    // .pipe(plugins.htmlmin({
-    //   collapseBooleanAttributes: true,
-    //   conservativeCollapse: true,
-    //   removeCommentsFromCDATA: true,
-    //   removeEmptyAttributes: true,
-    //   removeRedundantAttributes: true
-    // }))
     .pipe(gulp.dest(dest))
     .on('end', browserSync.reload);
   });

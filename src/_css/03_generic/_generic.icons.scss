@@ -17,7 +17,7 @@
   font-style: normal;
 }
 
-[class^="v-icon-"], [class*=" v-icon-"], .v-icon {
+[class^="icon-"], [class*=" icon-"], .icon {
   //use !important to prevent issues with browser extensions that change fonts
   font-family: 'icons' !important;
   speak: none;
@@ -33,64 +33,64 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.v-icon-lg {
+.icon-lg {
   font-size: 1.33333333em;
   line-height: 0.75em;
   vertical-align: -15%;
 }
-.v-icon-2x {
+.icon-2x {
   font-size: 2em;
 }
-.v-icon-3x {
+.icon-3x {
   font-size: 3em;
 }
-.v-icon-4x {
+.icon-4x {
   font-size: 4em;
 }
-.v-icon-5x {
+.icon-5x {
   font-size: 5em;
 }
-.v-icon-fw {
+.icon-fw {
   width: 1.28571429em;
   text-align: center;
 }
-.v-icon-ul {
+.icon-ul {
   padding-left: 0;
   margin-left: 2.14285714em;
   list-style-type: none;
 }
-.v-icon-ul > li {
+.icon-ul > li {
   position: relative;
 }
-.v-icon-li {
+.icon-li {
   position: absolute;
   left: -2.14285714em;
   width: 2.14285714em;
   top: 0.14285714em;
   text-align: center;
 }
-.v-icon-li.v-icon-lg {
+.icon-li.icon-lg {
   left: -1.85714286em;
 }
-.v-icon-border {
+.icon-border {
   padding: .2em .25em .15em;
   border: solid 0.08em #eeeeee;
   border-radius: .1em;
 }
-.v-icon-pull-left {
+.icon-pull-left {
   float: left;
 }
-.v-icon-pull-right {
+.icon-pull-right {
   float: right;
 }
-.v-icon.v-icon-pull-left {
+.icon.icon-pull-left {
   margin-right: .3em;
 }
-.v-icon.v-icon-pull-right {
+.icon.icon-pull-right {
   margin-left: .3em;
 }
 
-.v-icon-stack {
+.icon-stack {
   position: relative;
   display: inline-block;
   width: 2em;
@@ -98,109 +98,39 @@
   line-height: 2em;
   vertical-align: middle;
 }
-.v-icon-stack-1x,
-.v-icon-stack-2x {
+.icon-stack-1x,
+.icon-stack-2x {
   position: absolute;
   left: 0;
   width: 100%;
   text-align: center;
 }
-.v-icon-stack-1x {
+.icon-stack-1x {
   line-height: inherit;
 }
-.v-icon-stack-2x {
+.icon-stack-2x {
   font-size: 2em;
 }
-.v-icon-inverse {
+.icon-inverse {
   color: #ffffff;
 }
 
 $icon-list: (
 
-  calendar: "\EA01",
+  facebook: "\EA01",
 
-  close-round: "\EA02",
-
-  cotton: "\EA03",
-
-  dairy: "\EA04",
-
-  daylight: "\EA05",
-
-  dot-arrow-down: "\EA06",
-
-  dot-arrow-left: "\EA07",
-
-  dot-arrow-right: "\EA08",
-
-  dot-arrow-up: "\EA09",
-
-  dot-plus: "\EA0A",
-
-  download: "\EA0B",
-
-  eggs: "\EA0C",
-
-  facebook-official: "\EA0D",
-
-  facebook: "\EA0E",
-
-  fish: "\EA0F",
-
-  flag: "\EA10",
-
-  grain: "\EA11",
-
-  grapes: "\EA12",
-
-  home: "\EA13",
-
-  instagram: "\EA14",
-
-  justice: "\EA15",
-
-  linkedin-square: "\EA16",
-
-  linkedin: "\EA17",
-
-  livestock: "\EA18",
-
-  payment: "\EA19",
-
-  pdf: "\EA1A",
-
-  pork: "\EA1B",
-
-  printer: "\EA1C",
-
-  search: "\EA1D",
-
-  tips: "\EA1E",
-
-  tumblr: "\EA1F",
-
-  twitter: "\EA20",
-
-  woman: "\EA21",
-
-  wool: "\EA22",
-
-  youtube-square: "\EA23",
-
-  youtube: "\EA24",
-
-  youtube2: "\EA25",
+  instagram: "\EA02",
 
 );
 
 @each $icon, $refKey in $icon-list{
-  .v-icon-#{$icon}:before{
+  .icon-#{$icon}:before{
     content: $refKey;
   }
 }
 
 //usually this use on pseudo element
 @mixin m-icon($iconName){
-  @extend .v-icon;
+  @extend .icon;
   content: f-icon($iconName);
 }

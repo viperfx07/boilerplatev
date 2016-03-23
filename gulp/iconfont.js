@@ -12,7 +12,7 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync, di
   let iconFontSettings ={
     fontName: 'icons', // the font-family named used in the css
     fontPath: '../fonts/', //relative path to the fonts file, assuming the css directory is the same level as the fonts directory
-    className: 'v-icon' //associated with 'className' variable in template. will be the class name used in the css
+    className: 'icon' //associated with 'className' variable in template. will be the class name used in the css
   };
 
   gulp.task('iconfont', () => {

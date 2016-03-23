@@ -1,0 +1,6 @@
+mixin ulnav(items, navClass, ulClass, liClass)
+	nav(class=navClass)
+		ul(class=(ulClass) ? ulClass : navClass + '__list')
+			each item in items
+				li(class=(liClass) ? liClass : ulClass + '__list-item')
+					a(href=item.href, title=item.title)=item.title
