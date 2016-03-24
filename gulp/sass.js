@@ -34,7 +34,15 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync, di
           }),
           sprites({
             stylesheetPath: dest, 
-            spritePath: path.join(taskTarget, dirs.assets, 'img'), 
+            spritePath: path.join(taskTarget, dirs.assets, 'img'),
+            filterBy: function(image) {
+                // Allow only png files
+                if (!/\.(png|jpg|bmp|gif|jpeg)$/.test(image.url)) {
+                    return Promise.reject();
+                }
+
+                return Promise.resolve();
+            } 
           })
         ]))
       .pipe(plugins.rename(function(path) {
