@@ -152,5 +152,7 @@ Starts up a development server that watches files and automatically reloads them
 
 ## Issues / Todo
 
-1. Source map is not correct.
+1. (FIXED) Source map is not correct.
+> This is fixed by changing the outputStyle of the sass to default.
+
 2. Sometimes, browsersync doesn't reload, even though there's no error

@@ -10,7 +10,7 @@ An example link module:
 └── link
     ├── __tests__
     |   └── link.spec.js
-    ├── link.{jade,nunjucks}
+    ├── link.jade
     ├── link.js
     └── link.scss
 ```
