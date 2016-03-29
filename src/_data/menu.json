@@ -1,4 +1,4 @@
 [
-	{"title": "Home", "href": "/"},
-	{"title": "Client", "href": "/"}
+	{"title": "Home", "href": "/", "icon": "facebook"},
+	{"title": "Client", "href": "/", "icon": "facebook"}
 ]
