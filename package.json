@@ -72,11 +72,7 @@
     }
   },
   "dependencies": {
-    "dropkickjs": "^2.1.7",
     "foundation-sites": "^6.2.0",
-    "jquery": "^2.2.1",
-    "jquery-match-height": "^0.7.0",
-    "slick-carousel": "^1.5.9",
-    "webfontloader": "^1.6.22"
+    "jquery": "^2.2.1"
   }
 }

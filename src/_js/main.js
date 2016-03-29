@@ -1,6 +1,16 @@
+/**
+ * Some useful packages (you can install by using npm)
+ * 1. webfontloader  = async font loaders
+ * 2. slick-carousel = Simple, easy, responsive carousel 
+ * 3. jquery-match-height = Use this to match the height of elements. Either use this or Equalizer from Foundation
+ * 4. dropkickjs = if you need custom dropdown
+ *
+ * NOTES:
+ * This boilerplate uses CDN/external for jQuery package. Configured in gulp/webpack.js
+ */
+
 // import wf from 'webfontloader';
 import $ from 'jquery';
-// import 'slick-carousel';
 
 // wf.load({
 //     google: {
@@ -9,36 +19,6 @@ import $ from 'jquery';
 // });
 
 $(() => {
-
-    // Sllick carousel
-    // let $footerCarousel = $('.footer-carousel');
-    // $footerCarousel.slick({
-    //         slidesToShow:5, 
-    //         slidesToScroll:1,
-    //         responsive: [
-    //             {
-    //               breakpoint: 1200,
-    //               settings: {
-    //                 slidesToShow: 4,
-    //                 slidesToScroll: 1
-    //               }
-    //             },
-    //             {
-    //               breakpoint: 1024,
-    //               settings: {
-    //                 slidesToShow: 3,
-    //                 slidesToScroll: 1
-    //               }
-    //             },
-    //             {
-    //               breakpoint: 768,
-    //               settings: {
-    //                 slidesToShow: 2,
-    //                 slidesToScroll: 1
-    //               }
-    //             }
-    //         ]
-    //     });
 
     // if ($('.dropkick').length) {
 
@@ -54,11 +34,11 @@ $(() => {
     // }
 
     // match-height
-    if ($('[data-mh], .mh').length) {
+    // if ($('[data-mh], .mh').length) {
 
-        //load match height async-ly
-        require.ensure([], () => {
-            require('jquery-match-height');
-        });
-    }
+    //     //load match height async-ly
+    //     require.ensure([], () => {
+    //         require('jquery-match-height');
+    //     });
+    // }
 });
