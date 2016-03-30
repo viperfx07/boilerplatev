@@ -3,3 +3,8 @@
    @if $target == 0 { @return 0 }
    @return $target / $context + 0rem;
 }
+
+// short for rem-calc (foundation function)
+@function rc($val){
+	@return rem-calc($val);
+}

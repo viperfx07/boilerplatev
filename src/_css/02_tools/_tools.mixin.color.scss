@@ -1,7 +1,23 @@
-@mixin m-color($colorName){
-	color: map-get($colors, $colorName);
+// set text color
+@mixin m-color($colorName, opacity: 1){
+	$color: map-get($colors, $colorName);
+
+	@if $opacity == 1{
+		color: $color;
+	}
+	@else{
+		color: rgba($color, $opacity);
+	}
 }
 
-@mixin m-bgcolor($colorName){
-	background-color: map-get($colors, $colorName);
+// set background color
+@mixin m-bgcolor($colorName, $opacity: 1){
+	$color: map-get($colors, $colorName);
+
+	@if $opacity == 1{
+		background-color: $color;
+	}
+	@else{
+		background-color: rgba($color, $opacity);
+	}
 }
