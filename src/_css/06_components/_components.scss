@@ -2,6 +2,10 @@
 	@include m-sprite(rounded-plus);
 }
 
+.bgimg{
+	@include m-bgimg-with-ratio(16 9);
+}
+
 .nav-main{
 	margin-bottom: 1.5rem;
 	&__list{
