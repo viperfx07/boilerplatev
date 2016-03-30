@@ -2,7 +2,6 @@ bower_components/
 node_modules/
 .sass-cache/
 tmp/
-src/js/vendor/
 .DS_Store
 *.log
 www/
