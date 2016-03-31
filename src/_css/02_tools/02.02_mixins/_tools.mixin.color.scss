@@ -1,6 +1,6 @@
 // set text color
-@mixin m-color($colorName, opacity: 1){
-	$color: map-get($colors, $colorName);
+@mixin m-color($colorName, $opacity: 1){
+	$color: map-get($colors, $color_name);
 
 	@if $opacity == 1{
 		color: $color;
