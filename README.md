@@ -1,5 +1,5 @@
 #BoilerplateV 
-An extensive HTML5 framework for building robust web sites utilising [Jade](http://jade-lang.com/), SCSS/PostCSS with [Gulp](http://gulpjs.com). The boilerplate is based on [Yeogurt Generator](https://github.com/larsonjj/generator-yeogurt). The difference is, instead of Browserify, it uses Webpack. By default, it uses Foundation. For Boostrap lovers, you can checkout the **boilerplate** feature branch.
+An extensive HTML5 framework for building robust web sites utilising [Jade](http://jade-lang.com/), SCSS/PostCSS with [Gulp](http://gulpjs.com). The boilerplate is based on [Yeogurt Generator](https://github.com/larsonjj/generator-yeogurt). The difference is, instead of Browserify, it uses Webpack. By default, it uses Foundation. For Boostrap lovers, you can checkout the [**boilerplate**](https://github.com/viperfx07/boilerplatev/tree/feature/bootstrap) feature branch.
 
 >Notes:
 >
