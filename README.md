@@ -1,5 +1,5 @@
 #BoilerplateV 
-An extensive HTML5 framework for building robust web sites utilising [Jade](http://jade-lang.com/), SCSS/PostCSS with [Gulp](http://gulpjs.com). The boilerplate is based on [Yeogurt Generator](https://github.com/larsonjj/generator-yeogurt). The difference is, instead of Browserify, it uses Webpack.
+An extensive HTML5 framework for building robust web sites utilising [Jade](http://jade-lang.com/), SCSS/PostCSS with [Gulp](http://gulpjs.com). The boilerplate is based on [Yeogurt Generator](https://github.com/larsonjj/generator-yeogurt). The difference is, instead of Browserify, it uses Webpack. By default, it uses Foundation. For Boostrap lovers, you can checkout the **boilerplate** feature branch.
 
 >Notes:
 >
@@ -66,7 +66,7 @@ It will be generated using Jade
 It will be generated using SCSS with the concept of BEM (Block Element Modifier) with ITCSS (Inverted Triangle CSS)
 
 ###Framework
-[Foundation 6](http://foundation.zurb.com/sites/docs/) (as the time of writing)
+[Foundation 6](http://foundation.zurb.com/sites/docs/) (as the time of writing). If you want to use Bootstrap, use the **bootstrap** feature branch.
 
 Reason:
 
@@ -75,7 +75,7 @@ Reason:
 - A11y (Accessibility) Friendly
 - [Other features](http://foundation.zurb.com/sites.html)
 
-The most important files for Foundation in this boilerplate are **_settings.foundation.scss** and **_generic.foundation.scss**
+The most important files for Foundation in this boilerplate are **_settings.foundation.scss** and **_generic.foundation.scss**. For you who uses Bootstrap feature branch, they are **_settings.bootstrap.scss** and **_generic.bootstrap.scss**
 
 ###ITCSS 
 (ref: https://speakerdeck.com/dafed/managing-css-projects-with-itcss)
@@ -126,7 +126,7 @@ I'm using [postcss-sprites](https://github.com/2createStudio/postcss-sprites) pl
 
 1. All user-created functions must use f-*function-name* name convention, e.g. color: **f-color()** and put in **src/scss/02_tools/** folder and named **_tools.function.*function-name*.scss**.
 2. All user-created mixins need to use m-*mixin-name* name convention: **@include m-icon()**. and put in **src/scss/02_tools/** folder and named **_tools.mixin.*mixin-name*.scss**
-3. Foundation mixins found [here](http://foundation.zurb.com/sites/docs/sass-mixins.html)
+3. Foundation mixins found [here](http://foundation.zurb.com/sites/docs/sass-mixins.html) (if using Foundation).
 
 Notes:
 It hasn't had any setup the task to generate more than 1 sprite. Please see [here](https://github.com/2createStudio/postcss-sprites) for reference.
