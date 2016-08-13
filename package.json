@@ -55,6 +55,7 @@
     "directories": {
       "source": "src",
       "destination": "www",
+      "otherWWW": ["../test-multisite/WWW_Shared/", "../test-multisite/WWW_Site_A/"],
       "temporary": "tmp",
       "//": "Directories relative to `source` directory",
       "assets": "assets",

@@ -15,6 +15,7 @@ let config = pjson.config;
 let args = minimist(process.argv.slice(2));
 let dirs = config.directories;
 let taskTarget = args.production ? dirs.destination : dirs.temporary;
+let otherWWW = dirs.otherWWW;
 
 // Create a new browserSync instance
 let browserSync = browserSyncLib.create();
@@ -24,7 +25,7 @@ let browserSync = browserSyncLib.create();
 wrench.readdirSyncRecursive('./gulp').filter((file) => {
   return (/\.(js)$/i).test(file);
 }).map(function(file) {
-	require('./gulp/' + file)(gulp, plugins, args, config, taskTarget, browserSync, dirs);
+	require('./gulp/' + file)(gulp, plugins, args, config, taskTarget, browserSync, dirs, otherWWW);
 });
 
 // gulp.task('complete',['bower', 'imagemin', 'iconfont', 'fonts', 'sass', 'jade', 'webpack', 'dirsync', 'rootfiles', 'browserSync', 'watch' ]);

@@ -156,3 +156,31 @@ Starts up a development server that watches files and automatically reloads them
 > This is fixed by changing the outputStyle of the sass to default.
 
 2. Sometimes, browsersync doesn't reload, even though there's no error
+
+
+## Multiple Sites
+
+1. **gulp/copy.js** has **copy_otherWWW** which is configured in package.json
+This will allow the users to copy the tmp directory to single or multiple other directories (i.e sites directories).
+To run this task, type `gulp copy_otherWWW`. But before making and copying js/css to multiple directories/sites, make sure you check the other two tips below. This will prevent duplication that gives you a headache and hard to manage codes.
+
+2. **_CSS-wise**, it's BEST to use **ONE main.css** for all of the sites and using theme for specific site.
+For example, **siteA** has a theme class **theme--siteA**, while siteB has **theme--siteB** class in the body so that the users can just those classes. **Folder structure-wise**, it's better to structure them like this:
+
+```
+src
+	css
+		07_theme
+			siteA
+				04_base			-- base specifically for siteA theme (optional, if needed) 
+				06_components	-- components specifically for siteB theme
+				..etc..
+			siteB
+				04_base			-- base specifically for siteB theme (optional, if needed) 
+				06_components	-- components specifically for siteB theme
+				..etc..
+```
+
+3. **JS-wise**, it's BEST to use **ONE main.js** for all of the sites and using **require** to import the specific-site script into the **main.js asynchronously**.
+For example, if you look on **_src/js**, there's a folder called partials. Inside it, we can have files / folders depend how you want to structure it, and you can use require as per example to include them asyncly in **main.js**.
+If the codes needed all the time, just use import.
