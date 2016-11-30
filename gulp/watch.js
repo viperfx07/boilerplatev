@@ -22,17 +22,17 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync, di
         path.join(dirs.source, dirs.styles, '_generic_icons_template.scss')
       ], ['iconfont', 'fonts', 'sass']);
 
-      // Jade Templates
+      // Pug Templates
       gulp.watch([
-        path.join(dirs.source, '**/*.jade'),
+        path.join(dirs.source, '**/*.pug'),
         path.join(dirs.source, dirs.data, '**/*.json')
-      ], ['jade']);
+      ], ['pug']);
 
       // Copy
       gulp.watch([
         path.join(dirs.source, '**/*'),
         '!' + path.join(dirs.source, '{**/\_*,**/\_*/**}'),
-        '!' + path.join(dirs.source, '**/*.jade')
+        '!' + path.join(dirs.source, '**/*.pug')
       ], ['copy']);
 
       // Images

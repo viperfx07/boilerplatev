@@ -1,12 +1,13 @@
 /**
  * Some useful packages (you can install by using npm)
  * 1. webfontloader  = async font loaders
- * 2. slick-carousel = Simple, easy, responsive carousel 
+ * 2. slick-carousel = Simple, easy, responsive carousel (buggy centerMode - variableWidth - lazyMode)
  * 3. jquery-match-height = Use this to match the height of elements. Either use this or Equalizer from Foundation
  * 4. dropkickjs = if you need custom dropdown
  *
  * IMPORTANT:
  * To import async-ly, you need to wrap your codes in require.ensure([], () => { });
+ * It's best not to async plugins, to leverage browser cache
  * Ref: https://webpack.github.io/docs/code-splitting.html
  *  
  * NOTES:
@@ -25,38 +26,13 @@ import $ from 'jquery';
 
 $(() => {
 
-    // if ($('.dropkick').length) {
-
-    //     //load dropkick async-ly
-    //     require.ensure([], () => {
-    //         require('dropkickjs');
-
-    //         //all dropkick
-    //         $('.dropkick').dropkick({
-    //             mobile: true
-    //         });
-    //     });
-    // }
-
-    //////////////////
-    // Match-Height //
-    //////////////////
-    // if ($('[data-mh], .mh').length) {
-
-    //     //load match height async-ly
-    //     require.ensure([], () => {
-    //         require('jquery-match-height');
-    //     });
-    // }
-
-
     /////////////////////////////////
     // Partial requires example    //
     /////////////////////////////////
-    // if( true ) {
-    //     require.ensure([], () => {
-    //         require('./partials/partial')($);
-    //     });    
-    // }
+    if( true ) {
+        require.ensure([], () => {
+            require('./partials/partial')($);
+        }, "partials");    
+    }
     
 });

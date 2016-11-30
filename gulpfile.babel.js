@@ -28,7 +28,7 @@ wrench.readdirSyncRecursive('./gulp').filter((file) => {
 	require('./gulp/' + file)(gulp, plugins, args, config, taskTarget, browserSync, dirs, otherWWW);
 });
 
-// gulp.task('complete',['bower', 'imagemin', 'iconfont', 'fonts', 'sass', 'jade', 'webpack', 'dirsync', 'rootfiles', 'browserSync', 'watch' ]);
+// gulp.task('complete',['bower', 'imagemin', 'iconfont', 'fonts', 'sass', 'pug', 'webpack', 'dirsync', 'rootfiles', 'browserSync', 'watch' ]);
 
 // Default task
 gulp.task('default', ['clean'], () => {
@@ -41,7 +41,7 @@ gulp.task('build', [
   'imagemin',
   'iconfont',
   'fonts',
-  'jade',
+  'pug',
   'sass',
   'webpack',
   'browserSync',
@@ -54,7 +54,7 @@ gulp.task('serve', [
   'iconfont',
   'fonts',
   'copy',
-  'jade',
+  'pug',
   'sass',
   'webpack',
   'browserSync',

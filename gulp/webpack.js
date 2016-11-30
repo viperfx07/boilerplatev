@@ -14,7 +14,8 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync, di
             publicPath: assetsJs,
 
             //filename of the main app file
-            filename: config.entries.js
+            filename: '[name].js',
+            chunkFilename: '[name].js'
         },
         externals:{
             "jquery": "jQuery"
