@@ -9,9 +9,9 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync, di
 
   //icon font settings
   let iconFontSettings ={
-    fontName: 'icons', // the font-family named used in the css
+    fontName: 'g-icons', // the font-family named used in the css. use prefix for namespace
     fontPath: '../fonts/', //relative path to the fonts file, assuming the css directory is the same level as the fonts directory
-    className: 'icon' //associated with 'className' variable in template. will be the class name used in the css
+    className: 'g-icon' //associated with 'className' variable in template. will be the class name used in the css. use prefix for namespace
   };
 
   gulp.task('iconfont', () => {
@@ -21,7 +21,7 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync, di
       .pipe(plugins.iconfont({
         fontName: iconFontSettings.fontName, // required 
         // appendUnicode: true, // recommended option 
-        formats: ['ttf', 'eot', 'woff', 'svg'], // default, 'woff2' and 'svg' are available 
+        formats: ['ttf', 'eot', 'woff', 'woff2', 'svg'], // default, 'woff2' and 'svg' are available 
         timestamp: runTimestamp, // recommended to get consistent builds when watching files 
 
         //If some font glyphs aren't converted properly you should append the normalize:true option and a fontHeight greater than 1000 (fontHeight: 1001).

@@ -1,7 +1,7 @@
 mixin ulnavlink(item, wrapperClass)
 	a(href=item.href, title=item.title)
 		if(item.icon)
-			i(class="icon-" + item.icon)
+			i(class="g-icon-" + item.icon)
 		if(wrapperClass)
 			div(class=wrapperClass)=item.title
 		else
