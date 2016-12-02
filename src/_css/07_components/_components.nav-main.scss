@@ -1,12 +1,4 @@
-.sprite-test{
-	@include m-sprite(rounded-plus);
-}
-
-.bgimg{
-	@include m-bgimg-with-ratio(16 9);
-}
-
-.nav-main{
+.c-nav-main{
 	margin-bottom: 1.5rem;
 	&__list{
 		@include m-nav-list;
@@ -28,8 +20,12 @@
 				}
 			}
 
-			+ .nav-main__list-item{
+			+ &{
 				border-left: 1px dotted #000;
+			}
+
+			&:at-least(5){
+				display: none;
 			}
 		}
 	}

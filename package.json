@@ -40,8 +40,10 @@
     "oldie": "latest",
     "postcss-assets": "latest",
     "postcss-import": "latest",
+    "postcss-pxtorem": "latest",
     "postcss-sprites": "latest",
     "pug": "latest",
+    "rucksack-css": "^0.9.1",
     "webpack": "beta",
     "webpack-stream": "latest",
     "wrench": "latest"

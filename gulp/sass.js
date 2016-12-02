@@ -7,6 +7,8 @@ import atImport from 'postcss-import';
 import sprites from 'postcss-sprites';
 import assets from 'postcss-assets';
 import oldie from 'oldie';
+import pxtorem from 'postcss-pxtorem';
+import rucksack from 'rucksack-css';
 
 export default function(gulp, plugins, args, config, taskTarget, browserSync, dirs) {
   let entries = config.entries;
@@ -28,6 +30,8 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync, di
       }).on('error', plugins.sass.logError))
       .pipe(plugins.postcss([
           autoprefixer({browsers: ['last 2 version', '> 5%', 'safari 5', 'ios 6', 'android 4', 'ie 9']}),
+          rucksack({reporter: true}),
+          pxtorem({replace: false}),
           atImport(),
           assets({
             loadPaths: [path.join(dirs.source, dirs.images)]
@@ -50,7 +54,7 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync, di
         // Ex: 'src/_styles' --> '/styles'
         path.dirname = path.dirname.replace(dirs.source, '').replace('_', '');
       }))
-      .pipe(gulpif(args.production, plugins.cssnano({rebase: false})))
+      .pipe(plugins.cssnano({rebase: false}))
       .pipe(plugins.sourcemaps.write('./'))
       .pipe(gulp.dest(dest))
       .pipe(browserSync.stream({match: '**/*.css'}));

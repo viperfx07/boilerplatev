@@ -1,9 +1,9 @@
-@mixin m-bgimg-with-ratio($ratio, $imgUrl: ""){
-	@if ($imgUrl != "") {
-		background-image: url($imgUrl);
+@mixin m-bgimg-with-ratio($ratio, $url: "", $position: center, $size: cover, $repeat: no-repeat){
+	@if ($url != "") {
+		background-image: url($url);
 	}
     @include m-maintain-ratio($ratio);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-repeat: $repeat;
+    background-position: $position;
+    background-size: $size;
 }
